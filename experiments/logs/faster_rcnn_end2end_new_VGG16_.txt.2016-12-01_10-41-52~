@@ -1,0 +1,1268 @@
++ echo Logging output to experiments/logs/faster_rcnn_end2end_new_VGG16_.txt.2016-12-01_10-41-52
+Logging output to experiments/logs/faster_rcnn_end2end_new_VGG16_.txt.2016-12-01_10-41-52
++ python ./tools/train_net.py --gpu 0 --weights data/pretrain_model/VGG_imagenet.npy --imdb building_train --iters 70000 --cfg experiments/cfgs/faster_rcnn_end2end_new.yml --network VGGnet_train
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:111] successfully opened CUDA library libcurand.so locally
+voc_2007_train
+voc_2007_val
+voc_2007_trainval
+voc_2007_test
+kitti_train
+kitti_val
+kitti_trainval
+kitti_test
+nthu_71
+nthu_370
+building_train
+building_val
+building_trainval
+building_test
+Called with args:
+Namespace(cfg_file='experiments/cfgs/faster_rcnn_end2end_new.yml', gpu_id=0, imdb_name='building_train', max_iters=70000, network_name='VGGnet_train', pretrained_model='data/pretrain_model/VGG_imagenet.npy', randomize=False, set_cfgs=None, solver=None)
+Using config:
+{'DATA_DIR': '/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/data',
+ 'DEDUP_BOXES': 0.0625,
+ 'EPS': 1e-14,
+ 'EXP_DIR': 'faster_rcnn_end2end_sI',
+ 'GPU_ID': 0,
+ 'IS_MULTISCALE': False,
+ 'MATLAB': 'matlab',
+ 'MODELS_DIR': '/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/models/pascal_voc',
+ 'PIXEL_MEANS': array([[[ 102.9801,  115.9465,  122.7717]]]),
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF',
+ 'TEST': {'BBOX_REG': True,
+          'HAS_RPN': True,
+          'MAX_SIZE': 1000,
+          'NMS': 0.3,
+          'PROPOSAL_METHOD': 'selective_search',
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'SCALES': [600],
+          'SVM': False},
+ 'TRAIN': {'ASPECT_GROUPING': True,
+           'BATCH_SIZE': 128,
+           'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_NORMALIZE_TARGETS': True,
+           'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True,
+           'BBOX_REG': True,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'DISPLAY': 10,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'GAMMA': 0.1,
+           'HAS_RPN': True,
+           'IMS_PER_BATCH': 1,
+           'LEARNING_RATE': 0.001,
+           'MAX_SIZE': 1000,
+           'MOMENTUM': 0.9,
+           'PROPOSAL_METHOD': 'gt',
+           'RPN_BATCHSIZE': 256,
+           'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 16,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.8,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000,
+           'SCALES': [600],
+           'SNAPSHOT_INFIX': '',
+           'SNAPSHOT_ITERS': 5000,
+           'SNAPSHOT_PREFIX': 'VGGnet_fast_rcnn',
+           'STEPSIZE': 50000,
+           'USE_FLIPPED': True,
+           'USE_PREFETCH': False},
+ 'USE_GPU_NMS': True}
+<bound method building.default_roidb of <datasets.building.building object at 0x7f55ce04e790>>
+Loaded dataset `building_train` for training
+178
+Preparing training data...
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago1/chicago1_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago2/chicago2_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago3/chicago3_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago4/chicago4_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago5/chicago5_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago6/chicago6_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago7/chicago7_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago8/chicago8_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago9/chicago9_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago10/chicago10_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago11/chicago11_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago12/chicago12_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago13/chicago13_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago14/chicago14_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago15/chicago15_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago16/chicago16_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago17/chicago17_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago18/chicago18_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago19/chicago19_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago20/chicago20_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago21/chicago21_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago22/chicago22_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago23/chicago23_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago24/chicago24_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago25/chicago25_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago26/chicago26_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago27/chicago27_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago28/chicago28_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago29/chicago29_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago30/chicago30_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago31/chicago31_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago32/chicago32_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago33/chicago33_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago34/chicago34_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago35/chicago35_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago36/chicago36_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago37/chicago37_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago38/chicago38_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago39/chicago39_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago40/chicago40_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago41/chicago41_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago42/chicago42_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago43/chicago43_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago44/chicago44_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago45/chicago45_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago46/chicago46_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago47/chicago47_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago48/chicago48_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago49/chicago49_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago50/chicago50_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago51/chicago51_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago52/chicago52_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago53/chicago53_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago54/chicago54_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago55/chicago55_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago56/chicago56_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago57/chicago57_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago58/chicago58_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago59/chicago59_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago60/chicago60_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago61/chicago61_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago62/chicago62_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago63/chicago63_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago64/chicago64_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago65/chicago65_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago66/chicago66_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago67/chicago67_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago68/chicago68_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago69/chicago69_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago70/chicago70_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago71/chicago71_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago72/chicago72_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago73/chicago73_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago74/chicago74_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago75/chicago75_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago76/chicago76_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago77/chicago77_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago78/chicago78_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago79/chicago79_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago80/chicago80_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago81/chicago81_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago82/chicago82_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago83/chicago83_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago84/chicago84_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago85/chicago85_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago86/chicago86_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago87/chicago87_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago88/chicago88_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago89/chicago89_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago90/chicago90_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago91/chicago91_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago92/chicago92_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago93/chicago93_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago94/chicago94_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago95/chicago95_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago96/chicago96_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago97/chicago97_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago98/chicago98_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago99/chicago99_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago100/chicago100_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago101/chicago101_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago102/chicago102_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago103/chicago103_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago104/chicago104_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago105/chicago105_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago106/chicago106_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago107/chicago107_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago108/chicago108_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago109/chicago109_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago110/chicago110_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago111/chicago111_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago112/chicago112_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago113/chicago113_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago114/chicago114_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago115/chicago115_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago116/chicago116_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago117/chicago117_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago118/chicago118_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago119/chicago119_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago120/chicago120_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago121/chicago121_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago122/chicago122_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago123/chicago123_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago124/chicago124_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago125/chicago125_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago126/chicago126_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago127/chicago127_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago128/chicago128_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago129/chicago129_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago130/chicago130_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago131/chicago131_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago132/chicago132_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago133/chicago133_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago134/chicago134_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago135/chicago135_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago136/chicago136_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago137/chicago137_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago138/chicago138_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago139/chicago139_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago140/chicago140_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago141/chicago141_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago142/chicago142_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago143/chicago143_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago144/chicago144_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago145/chicago145_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago146/chicago146_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago147/chicago147_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago148/chicago148_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago149/chicago149_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago150/chicago150_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago151/chicago151_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago152/chicago152_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago153/chicago153_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago154/chicago154_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago155/chicago155_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago156/chicago156_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago157/chicago157_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago158/chicago158_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago159/chicago159_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago160/chicago160_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago161/chicago161_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago162/chicago162_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago163/chicago163_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago164/chicago164_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago165/chicago165_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago166/chicago166_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago167/chicago167_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago168/chicago168_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago169/chicago169_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago170/chicago170_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago171/chicago171_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago172/chicago172_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago173/chicago173_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago174/chicago174_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago175/chicago175_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago176/chicago176_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago177/chicago177_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago178/chicago178_wholeSatImage.png
+building_train gt roidb loaded from /scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/data/cache/building_train__gt_roidb.pkl
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago1/chicago1_wholeSatImage.png
+/usr/local/lib/python2.7/dist-packages/numpy/core/fromnumeric.py:2699: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  VisibleDeprecationWarning)
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago2/chicago2_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago3/chicago3_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago4/chicago4_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago5/chicago5_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago6/chicago6_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago7/chicago7_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago8/chicago8_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago9/chicago9_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago10/chicago10_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago11/chicago11_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago12/chicago12_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago13/chicago13_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago14/chicago14_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago15/chicago15_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago16/chicago16_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago17/chicago17_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago18/chicago18_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago19/chicago19_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago20/chicago20_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago21/chicago21_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago22/chicago22_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago23/chicago23_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago24/chicago24_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago25/chicago25_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago26/chicago26_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago27/chicago27_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago28/chicago28_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago29/chicago29_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago30/chicago30_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago31/chicago31_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago32/chicago32_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago33/chicago33_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago34/chicago34_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago35/chicago35_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago36/chicago36_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago37/chicago37_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago38/chicago38_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago39/chicago39_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago40/chicago40_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago41/chicago41_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago42/chicago42_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago43/chicago43_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago44/chicago44_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago45/chicago45_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago46/chicago46_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago47/chicago47_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago48/chicago48_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago49/chicago49_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago50/chicago50_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago51/chicago51_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago52/chicago52_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago53/chicago53_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago54/chicago54_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago55/chicago55_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago56/chicago56_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago57/chicago57_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago58/chicago58_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago59/chicago59_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago60/chicago60_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago61/chicago61_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago62/chicago62_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago63/chicago63_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago64/chicago64_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago65/chicago65_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago66/chicago66_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago67/chicago67_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago68/chicago68_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago69/chicago69_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago70/chicago70_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago71/chicago71_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago72/chicago72_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago73/chicago73_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago74/chicago74_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago75/chicago75_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago76/chicago76_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago77/chicago77_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago78/chicago78_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago79/chicago79_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago80/chicago80_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago81/chicago81_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago82/chicago82_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago83/chicago83_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago84/chicago84_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago85/chicago85_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago86/chicago86_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago87/chicago87_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago88/chicago88_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago89/chicago89_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago90/chicago90_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago91/chicago91_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago92/chicago92_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago93/chicago93_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago94/chicago94_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago95/chicago95_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago96/chicago96_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago97/chicago97_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago98/chicago98_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago99/chicago99_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago100/chicago100_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago101/chicago101_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago102/chicago102_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago103/chicago103_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago104/chicago104_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago105/chicago105_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago106/chicago106_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago107/chicago107_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago108/chicago108_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago109/chicago109_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago110/chicago110_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago111/chicago111_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago112/chicago112_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago113/chicago113_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago114/chicago114_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago115/chicago115_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago116/chicago116_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago117/chicago117_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago118/chicago118_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago119/chicago119_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago120/chicago120_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago121/chicago121_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago122/chicago122_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago123/chicago123_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago124/chicago124_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago125/chicago125_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago126/chicago126_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago127/chicago127_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago128/chicago128_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago129/chicago129_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago130/chicago130_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago131/chicago131_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago132/chicago132_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago133/chicago133_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago134/chicago134_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago135/chicago135_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago136/chicago136_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago137/chicago137_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago138/chicago138_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago139/chicago139_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago140/chicago140_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago141/chicago141_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago142/chicago142_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago143/chicago143_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago144/chicago144_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago145/chicago145_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago146/chicago146_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago147/chicago147_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago148/chicago148_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago149/chicago149_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago150/chicago150_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago151/chicago151_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago152/chicago152_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago153/chicago153_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago154/chicago154_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago155/chicago155_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago156/chicago156_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago157/chicago157_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago158/chicago158_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago159/chicago159_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago160/chicago160_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago161/chicago161_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago162/chicago162_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago163/chicago163_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago164/chicago164_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago165/chicago165_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago166/chicago166_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago167/chicago167_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago168/chicago168_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago169/chicago169_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago170/chicago170_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago171/chicago171_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago172/chicago172_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago173/chicago173_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago174/chicago174_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago175/chicago175_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago176/chicago176_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago177/chicago177_wholeSatImage.png
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/datasets/../../data/building_data/chicago178/chicago178_wholeSatImage.png
+done
+Output will be saved to `/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/output/faster_rcnn_end2end_sI/building_train`
+/gpu:0
+Tensor("Placeholder:0", shape=(?, ?, ?, 3), dtype=float32)
+Tensor("conv5_3/conv5_3:0", shape=(?, ?, ?, 512), dtype=float32)
+Tensor("rpn_cls_score/rpn_cls_score:0", shape=(?, ?, ?, 18), dtype=float32)
+Tensor("Placeholder_2:0", shape=(?, 5), dtype=float32)
+Tensor("Placeholder_1:0", shape=(?, 3), dtype=float32)
+Tensor("Placeholder:0", shape=(?, ?, ?, 3), dtype=float32)
+Tensor("rpn_conv/3x3/rpn_conv/3x3:0", shape=(?, ?, ?, 512), dtype=float32)
+Tensor("rpn_cls_score/rpn_cls_score:0", shape=(?, ?, ?, 18), dtype=float32)
+Tensor("rpn_cls_prob:0", shape=(?, ?, ?, ?), dtype=float32)
+Tensor("rpn_cls_prob_reshape:0", shape=(?, ?, ?, 18), dtype=float32)
+Tensor("rpn_bbox_pred/rpn_bbox_pred:0", shape=(?, ?, ?, 36), dtype=float32)
+Tensor("Placeholder_1:0", shape=(?, 3), dtype=float32)
+Tensor("rpn_rois:0", shape=(?, 5), dtype=float32)
+Tensor("Placeholder_2:0", shape=(?, 5), dtype=float32)
+Tensor("Placeholder_3:0", shape=(?, 1), dtype=float32)
+ ..................xxxx........................ 
+Tensor("rpn_rois:0", shape=(?, 5), dtype=float32)
+Tensor("Placeholder_2:0", shape=(?, 5), dtype=float32)
+Tensor("Placeholder_3:0", shape=(?, 1), dtype=float32)
+Tensor("conv5_3/conv5_3:0", shape=(?, ?, ?, 512), dtype=float32)
+(<tf.Tensor 'roi-data/rois:0' shape=(?, 5) dtype=float32>, <tf.Tensor 'roi-data/Cast:0' shape=<unknown> dtype=int32>, <tf.Tensor 'roi-data/PyFunc:2' shape=<unknown> dtype=float32>, <tf.Tensor 'roi-data/PyFunc:3' shape=<unknown> dtype=float32>, <tf.Tensor 'roi-data/PyFunc:4' shape=<unknown> dtype=float32>, <tf.Tensor 'roi-data/gt_orientations_new:0' shape=(?, 1) dtype=float32>)
+................ roi pool .......................
+Tensor("roi-data/rois:0", shape=(?, 5), dtype=float32)
+Tensor("roi-data/Cast:0", dtype=int32)
+Tensor("roi-data/PyFunc:2", dtype=float32)
+Tensor("roi-data/PyFunc:3", dtype=float32)
+Tensor("roi-data/PyFunc:4", dtype=float32)
+Tensor("roi-data/gt_orientations_new:0", shape=(?, 1), dtype=float32)
+Tensor("conv5_3/conv5_3:0", shape=(?, ?, ?, 512), dtype=float32)
+Tensor("roi-data/rois:0", shape=(?, 5), dtype=float32)
+[<tf.Tensor 'conv5_3/conv5_3:0' shape=(?, ?, ?, 512) dtype=float32>, <tf.Tensor 'roi-data/rois:0' shape=(?, 5) dtype=float32>]
+Tensor("drop7/mul:0", shape=(?, 4096), dtype=float32)
+Tensor("drop7/mul:0", shape=(?, 4096), dtype=float32)
+Use network `VGGnet_train` in training
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:951] Found device 0 with properties: 
+name: GeForce GTX TITAN X
+major: 5 minor: 2 memoryClockRate (GHz) 1.076
+pciBusID 0000:01:00.0
+Total memory: 11.92GiB
+Free memory: 11.48GiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:972] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX TITAN X, pci bus id: 0000:01:00.0)
+Computing bounding-box regression targets...
+bbox target means:
+[[ 0.  0.  0.  0.]
+ [ 0.  0.  0.  0.]]
+[ 0.  0.  0.  0.]
+bbox target stdevs:
+[[ 0.1  0.1  0.2  0.2]
+ [ 0.1  0.1  0.2  0.2]]
+[ 0.1  0.1  0.2  0.2]
+Normalizing targets
+done
+Solving...
+................. loss orientation .....................
+Tensor("orientation_pred/orientation_pred:0", shape=(?, 1), dtype=float32)
+Tensor("roi-data/gt_orientations_new:0", shape=(?, 1), dtype=float32)
+Tensor("Mean_4:0", shape=(), dtype=float32)
+Tensor("roi-data/gt_orientations_new:0", shape=(?, 1), dtype=float32)
+/usr/local/lib/python2.7/dist-packages/tensorflow/python/ops/gradients.py:90: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+Loading pretrained model weights from data/pretrain_model/VGG_imagenet.npy
+assign pretrain model weights to conv5_1
+assign pretrain model biases to conv5_1
+assign pretrain model weights to fc6
+assign pretrain model biases to fc6
+assign pretrain model weights to conv5_3
+assign pretrain model biases to conv5_3
+assign pretrain model weights to fc7
+assign pretrain model biases to fc7
+ignore fc8
+ignore fc8
+assign pretrain model weights to conv5_2
+assign pretrain model biases to conv5_2
+assign pretrain model weights to conv4_1
+assign pretrain model biases to conv4_1
+assign pretrain model weights to conv4_2
+assign pretrain model biases to conv4_2
+assign pretrain model weights to conv4_3
+assign pretrain model biases to conv4_3
+assign pretrain model weights to conv3_3
+assign pretrain model biases to conv3_3
+assign pretrain model weights to conv3_2
+assign pretrain model biases to conv3_2
+assign pretrain model weights to conv3_1
+assign pretrain model biases to conv3_1
+assign pretrain model weights to conv1_1
+assign pretrain model biases to conv1_1
+assign pretrain model weights to conv1_2
+assign pretrain model biases to conv1_2
+assign pretrain model weights to conv2_2
+assign pretrain model biases to conv2_2
+assign pretrain model weights to conv2_1
+assign pretrain model biases to conv2_1
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/rpn_msr/proposal_target_layer_tf.py:94: VisibleDeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  bbox_targets[ind, start:end] = bbox_target_data[ind, 1:]
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/rpn_msr/proposal_target_layer_tf.py:95: VisibleDeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  bbox_inside_weights[ind, start:end] = cfg.TRAIN.BBOX_INSIDE_WEIGHTS
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/rpn_msr/proposal_target_layer_tf.py:136: VisibleDeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  fg_inds = npr.choice(fg_inds, size=fg_rois_per_this_image, replace=False)
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/rpn_msr/proposal_target_layer_tf.py:147: VisibleDeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  bg_inds = npr.choice(bg_inds, size=bg_rois_per_this_image, replace=False)
+/scratch/rueegnad_scratch/my_programs/Faster-RCNN_TF/tools/../lib/rpn_msr/proposal_target_layer_tf.py:155: VisibleDeprecationWarning: using a non-integer number instead of an integer will result in an error in the future
+  labels[fg_rois_per_this_image:] = 0
+iter: 10 / 70000,total loss: 2.2801, rpn_loss_cls: 0.5753, rpn_loss_box: 0.8784, loss_cls: 0.3913, loss_box: 0.4351, lr: 0.001000
+speed: 0.513s / iter
+iter: 20 / 70000,total loss: 2.2000, rpn_loss_cls: 0.4754, rpn_loss_box: 0.3201, loss_cls: 0.4933, loss_box: 0.9112, lr: 0.001000
+speed: 0.363s / iter
+iter: 30 / 70000,total loss: 2.2045, rpn_loss_cls: 0.3909, rpn_loss_box: 0.3577, loss_cls: 0.4788, loss_box: 0.9771, lr: 0.001000
+speed: 0.314s / iter
+iter: 40 / 70000,total loss: 2.1943, rpn_loss_cls: 0.4288, rpn_loss_box: 0.4232, loss_cls: 0.4787, loss_box: 0.8636, lr: 0.001000
+speed: 0.289s / iter
+iter: 50 / 70000,total loss: 1.8313, rpn_loss_cls: 0.3106, rpn_loss_box: 0.2027, loss_cls: 0.5036, loss_box: 0.8145, lr: 0.001000
+speed: 0.274s / iter
+iter: 60 / 70000,total loss: 2.0760, rpn_loss_cls: 0.3539, rpn_loss_box: 0.3037, loss_cls: 0.4830, loss_box: 0.9354, lr: 0.001000
+speed: 0.264s / iter
+iter: 70 / 70000,total loss: 2.0747, rpn_loss_cls: 0.3601, rpn_loss_box: 0.3977, loss_cls: 0.4009, loss_box: 0.9160, lr: 0.001000
+speed: 0.258s / iter
+iter: 80 / 70000,total loss: 1.7275, rpn_loss_cls: 0.2799, rpn_loss_box: 0.2567, loss_cls: 0.3427, loss_box: 0.8482, lr: 0.001000
+speed: 0.253s / iter
+iter: 90 / 70000,total loss: 1.6255, rpn_loss_cls: 0.3094, rpn_loss_box: 0.0876, loss_cls: 0.4806, loss_box: 0.7480, lr: 0.001000
+speed: 0.249s / iter
+iter: 100 / 70000,total loss: 1.9308, rpn_loss_cls: 0.2695, rpn_loss_box: 0.2332, loss_cls: 0.4857, loss_box: 0.9425, lr: 0.001000
+speed: 0.247s / iter
+iter: 110 / 70000,total loss: 1.9776, rpn_loss_cls: 0.4313, rpn_loss_box: 0.2177, loss_cls: 0.4952, loss_box: 0.8334, lr: 0.001000
+speed: 0.244s / iter
+iter: 120 / 70000,total loss: 1.6896, rpn_loss_cls: 0.2428, rpn_loss_box: 0.1872, loss_cls: 0.4389, loss_box: 0.8207, lr: 0.001000
+speed: 0.241s / iter
+iter: 130 / 70000,total loss: 2.0006, rpn_loss_cls: 0.2712, rpn_loss_box: 0.2968, loss_cls: 0.4097, loss_box: 1.0229, lr: 0.001000
+speed: 0.240s / iter
+iter: 140 / 70000,total loss: 1.6850, rpn_loss_cls: 0.1925, rpn_loss_box: 0.2889, loss_cls: 0.3806, loss_box: 0.8230, lr: 0.001000
+speed: 0.238s / iter
+iter: 150 / 70000,total loss: 1.7583, rpn_loss_cls: 0.1981, rpn_loss_box: 0.3054, loss_cls: 0.3015, loss_box: 0.9535, lr: 0.001000
+speed: 0.237s / iter
+iter: 160 / 70000,total loss: 1.4248, rpn_loss_cls: 0.1997, rpn_loss_box: 0.1181, loss_cls: 0.2578, loss_box: 0.8490, lr: 0.001000
+speed: 0.236s / iter
+iter: 170 / 70000,total loss: 1.7321, rpn_loss_cls: 0.2767, rpn_loss_box: 0.1866, loss_cls: 0.4305, loss_box: 0.8383, lr: 0.001000
+speed: 0.235s / iter
+iter: 180 / 70000,total loss: 1.4464, rpn_loss_cls: 0.1605, rpn_loss_box: 0.1071, loss_cls: 0.3346, loss_box: 0.8442, lr: 0.001000
+speed: 0.234s / iter
+iter: 190 / 70000,total loss: 1.4038, rpn_loss_cls: 0.1464, rpn_loss_box: 0.1000, loss_cls: 0.3920, loss_box: 0.7654, lr: 0.001000
+speed: 0.233s / iter
+iter: 200 / 70000,total loss: 1.2945, rpn_loss_cls: 0.1993, rpn_loss_box: 0.1187, loss_cls: 0.2375, loss_box: 0.7390, lr: 0.001000
+speed: 0.233s / iter
+iter: 210 / 70000,total loss: 1.4790, rpn_loss_cls: 0.2178, rpn_loss_box: 0.1032, loss_cls: 0.3264, loss_box: 0.8317, lr: 0.001000
+speed: 0.232s / iter
+iter: 220 / 70000,total loss: 1.9607, rpn_loss_cls: 0.2139, rpn_loss_box: 0.3709, loss_cls: 0.4594, loss_box: 0.9165, lr: 0.001000
+speed: 0.231s / iter
+iter: 230 / 70000,total loss: 1.6664, rpn_loss_cls: 0.2076, rpn_loss_box: 0.4890, loss_cls: 0.2477, loss_box: 0.7221, lr: 0.001000
+speed: 0.231s / iter
+iter: 240 / 70000,total loss: 1.4896, rpn_loss_cls: 0.2215, rpn_loss_box: 0.1279, loss_cls: 0.3691, loss_box: 0.7711, lr: 0.001000
+speed: 0.231s / iter
+iter: 250 / 70000,total loss: 1.2962, rpn_loss_cls: 0.2348, rpn_loss_box: 0.0619, loss_cls: 0.2023, loss_box: 0.7972, lr: 0.001000
+speed: 0.230s / iter
+iter: 260 / 70000,total loss: 1.5081, rpn_loss_cls: 0.1225, rpn_loss_box: 0.2247, loss_cls: 0.3045, loss_box: 0.8565, lr: 0.001000
+speed: 0.230s / iter
+iter: 270 / 70000,total loss: 1.6793, rpn_loss_cls: 0.3405, rpn_loss_box: 0.1696, loss_cls: 0.3119, loss_box: 0.8573, lr: 0.001000
+speed: 0.229s / iter
+iter: 280 / 70000,total loss: 1.2904, rpn_loss_cls: 0.1463, rpn_loss_box: 0.1291, loss_cls: 0.3385, loss_box: 0.6766, lr: 0.001000
+speed: 0.229s / iter
+iter: 290 / 70000,total loss: 1.3562, rpn_loss_cls: 0.1558, rpn_loss_box: 0.1049, loss_cls: 0.3328, loss_box: 0.7627, lr: 0.001000
+speed: 0.229s / iter
+iter: 300 / 70000,total loss: 1.5116, rpn_loss_cls: 0.1527, rpn_loss_box: 0.1300, loss_cls: 0.3077, loss_box: 0.9212, lr: 0.001000
+speed: 0.228s / iter
+iter: 310 / 70000,total loss: 1.4200, rpn_loss_cls: 0.2037, rpn_loss_box: 0.1895, loss_cls: 0.2686, loss_box: 0.7583, lr: 0.001000
+speed: 0.228s / iter
+iter: 320 / 70000,total loss: 1.2694, rpn_loss_cls: 0.1620, rpn_loss_box: 0.1483, loss_cls: 0.2349, loss_box: 0.7242, lr: 0.001000
+speed: 0.228s / iter
+iter: 330 / 70000,total loss: 1.3585, rpn_loss_cls: 0.1413, rpn_loss_box: 0.2036, loss_cls: 0.3122, loss_box: 0.7014, lr: 0.001000
+speed: 0.227s / iter
+iter: 340 / 70000,total loss: 1.4629, rpn_loss_cls: 0.2504, rpn_loss_box: 0.1782, loss_cls: 0.1871, loss_box: 0.8473, lr: 0.001000
+speed: 0.227s / iter
+iter: 350 / 70000,total loss: 1.4178, rpn_loss_cls: 0.2533, rpn_loss_box: 0.2260, loss_cls: 0.3084, loss_box: 0.6301, lr: 0.001000
+speed: 0.227s / iter
+iter: 360 / 70000,total loss: 1.4707, rpn_loss_cls: 0.1077, rpn_loss_box: 0.1806, loss_cls: 0.3243, loss_box: 0.8582, lr: 0.001000
+speed: 0.227s / iter
+iter: 370 / 70000,total loss: 1.5521, rpn_loss_cls: 0.2553, rpn_loss_box: 0.1661, loss_cls: 0.3780, loss_box: 0.7527, lr: 0.001000
+speed: 0.226s / iter
+iter: 380 / 70000,total loss: 1.4950, rpn_loss_cls: 0.2334, rpn_loss_box: 0.1388, loss_cls: 0.3308, loss_box: 0.7920, lr: 0.001000
+speed: 0.226s / iter
+iter: 390 / 70000,total loss: 1.3464, rpn_loss_cls: 0.2083, rpn_loss_box: 0.0661, loss_cls: 0.3075, loss_box: 0.7645, lr: 0.001000
+speed: 0.226s / iter
+iter: 400 / 70000,total loss: 1.1455, rpn_loss_cls: 0.1072, rpn_loss_box: 0.1119, loss_cls: 0.2482, loss_box: 0.6782, lr: 0.001000
+speed: 0.226s / iter
+iter: 410 / 70000,total loss: 1.5407, rpn_loss_cls: 0.2122, rpn_loss_box: 0.2957, loss_cls: 0.2809, loss_box: 0.7519, lr: 0.001000
+speed: 0.226s / iter
+iter: 420 / 70000,total loss: 1.2460, rpn_loss_cls: 0.1044, rpn_loss_box: 0.1417, loss_cls: 0.2620, loss_box: 0.7380, lr: 0.001000
+speed: 0.226s / iter
+iter: 430 / 70000,total loss: 1.3816, rpn_loss_cls: 0.1444, rpn_loss_box: 0.0961, loss_cls: 0.3075, loss_box: 0.8336, lr: 0.001000
+speed: 0.225s / iter
+iter: 440 / 70000,total loss: 1.0885, rpn_loss_cls: 0.1116, rpn_loss_box: 0.0960, loss_cls: 0.2228, loss_box: 0.6580, lr: 0.001000
+speed: 0.225s / iter
+iter: 450 / 70000,total loss: 1.2267, rpn_loss_cls: 0.1722, rpn_loss_box: 0.0677, loss_cls: 0.2778, loss_box: 0.7089, lr: 0.001000
+speed: 0.225s / iter
+iter: 460 / 70000,total loss: 1.3720, rpn_loss_cls: 0.2201, rpn_loss_box: 0.1275, loss_cls: 0.3133, loss_box: 0.7111, lr: 0.001000
+speed: 0.225s / iter
+iter: 470 / 70000,total loss: 1.2177, rpn_loss_cls: 0.1894, rpn_loss_box: 0.0988, loss_cls: 0.2436, loss_box: 0.6859, lr: 0.001000
+speed: 0.225s / iter
+iter: 480 / 70000,total loss: 1.4386, rpn_loss_cls: 0.2616, rpn_loss_box: 0.1943, loss_cls: 0.3559, loss_box: 0.6269, lr: 0.001000
+speed: 0.225s / iter
+iter: 490 / 70000,total loss: 1.3207, rpn_loss_cls: 0.1953, rpn_loss_box: 0.1866, loss_cls: 0.2802, loss_box: 0.6586, lr: 0.001000
+speed: 0.224s / iter
+iter: 500 / 70000,total loss: 1.2893, rpn_loss_cls: 0.1235, rpn_loss_box: 0.1679, loss_cls: 0.2710, loss_box: 0.7268, lr: 0.001000
+speed: 0.224s / iter
+iter: 510 / 70000,total loss: 1.7602, rpn_loss_cls: 0.4715, rpn_loss_box: 0.2310, loss_cls: 0.3377, loss_box: 0.7201, lr: 0.001000
+speed: 0.224s / iter
+iter: 520 / 70000,total loss: 1.9335, rpn_loss_cls: 0.3292, rpn_loss_box: 0.4847, loss_cls: 0.3819, loss_box: 0.7376, lr: 0.001000
+speed: 0.224s / iter
+iter: 530 / 70000,total loss: 1.1879, rpn_loss_cls: 0.1371, rpn_loss_box: 0.1587, loss_cls: 0.2090, loss_box: 0.6832, lr: 0.001000
+speed: 0.224s / iter
+iter: 540 / 70000,total loss: 1.0979, rpn_loss_cls: 0.1345, rpn_loss_box: 0.1705, loss_cls: 0.2452, loss_box: 0.5477, lr: 0.001000
+speed: 0.224s / iter
+iter: 550 / 70000,total loss: 1.4123, rpn_loss_cls: 0.0923, rpn_loss_box: 0.3277, loss_cls: 0.2126, loss_box: 0.7797, lr: 0.001000
+speed: 0.224s / iter
+iter: 560 / 70000,total loss: 1.0735, rpn_loss_cls: 0.0817, rpn_loss_box: 0.0740, loss_cls: 0.2290, loss_box: 0.6887, lr: 0.001000
+speed: 0.224s / iter
+iter: 570 / 70000,total loss: 1.1730, rpn_loss_cls: 0.1011, rpn_loss_box: 0.0915, loss_cls: 0.3131, loss_box: 0.6672, lr: 0.001000
+speed: 0.224s / iter
+iter: 580 / 70000,total loss: 1.1092, rpn_loss_cls: 0.1260, rpn_loss_box: 0.1783, loss_cls: 0.2141, loss_box: 0.5908, lr: 0.001000
+speed: 0.224s / iter
+iter: 590 / 70000,total loss: 1.3423, rpn_loss_cls: 0.1381, rpn_loss_box: 0.1008, loss_cls: 0.3072, loss_box: 0.7962, lr: 0.001000
+speed: 0.224s / iter
+iter: 600 / 70000,total loss: 1.4345, rpn_loss_cls: 0.1242, rpn_loss_box: 0.1299, loss_cls: 0.3175, loss_box: 0.8629, lr: 0.001000
+speed: 0.223s / iter
+iter: 610 / 70000,total loss: 0.9700, rpn_loss_cls: 0.0337, rpn_loss_box: 0.1173, loss_cls: 0.1814, loss_box: 0.6377, lr: 0.001000
+speed: 0.223s / iter
+iter: 620 / 70000,total loss: 0.8943, rpn_loss_cls: 0.0994, rpn_loss_box: 0.0481, loss_cls: 0.1686, loss_box: 0.5782, lr: 0.001000
+speed: 0.223s / iter
+iter: 630 / 70000,total loss: 1.3488, rpn_loss_cls: 0.1255, rpn_loss_box: 0.1981, loss_cls: 0.3204, loss_box: 0.7048, lr: 0.001000
+speed: 0.223s / iter
+iter: 640 / 70000,total loss: 1.0961, rpn_loss_cls: 0.1343, rpn_loss_box: 0.1131, loss_cls: 0.2275, loss_box: 0.6212, lr: 0.001000
+speed: 0.223s / iter
+iter: 650 / 70000,total loss: 0.9563, rpn_loss_cls: 0.1186, rpn_loss_box: 0.0366, loss_cls: 0.2016, loss_box: 0.5995, lr: 0.001000
+speed: 0.223s / iter
+iter: 660 / 70000,total loss: 1.4679, rpn_loss_cls: 0.2175, rpn_loss_box: 0.2646, loss_cls: 0.2828, loss_box: 0.7030, lr: 0.001000
+speed: 0.223s / iter
+iter: 670 / 70000,total loss: 1.0076, rpn_loss_cls: 0.1084, rpn_loss_box: 0.0639, loss_cls: 0.2256, loss_box: 0.6098, lr: 0.001000
+speed: 0.223s / iter
+iter: 680 / 70000,total loss: 1.3401, rpn_loss_cls: 0.0420, rpn_loss_box: 0.5155, loss_cls: 0.1969, loss_box: 0.5856, lr: 0.001000
+speed: 0.223s / iter
+iter: 690 / 70000,total loss: 1.2728, rpn_loss_cls: 0.0477, rpn_loss_box: 0.3187, loss_cls: 0.2333, loss_box: 0.6731, lr: 0.001000
+speed: 0.223s / iter
+iter: 700 / 70000,total loss: 1.1516, rpn_loss_cls: 0.1698, rpn_loss_box: 0.0900, loss_cls: 0.3036, loss_box: 0.5881, lr: 0.001000
+speed: 0.223s / iter
+iter: 710 / 70000,total loss: 1.2106, rpn_loss_cls: 0.1721, rpn_loss_box: 0.2135, loss_cls: 0.1871, loss_box: 0.6378, lr: 0.001000
+speed: 0.223s / iter
+iter: 720 / 70000,total loss: 1.2072, rpn_loss_cls: 0.0099, rpn_loss_box: 0.5096, loss_cls: 0.0939, loss_box: 0.5937, lr: 0.001000
+speed: 0.223s / iter
+iter: 730 / 70000,total loss: 1.1179, rpn_loss_cls: 0.1598, rpn_loss_box: 0.1490, loss_cls: 0.1747, loss_box: 0.6344, lr: 0.001000
+speed: 0.223s / iter
+iter: 740 / 70000,total loss: 1.0985, rpn_loss_cls: 0.0777, rpn_loss_box: 0.0587, loss_cls: 0.2373, loss_box: 0.7249, lr: 0.001000
+speed: 0.223s / iter
+iter: 750 / 70000,total loss: 1.1814, rpn_loss_cls: 0.2035, rpn_loss_box: 0.1205, loss_cls: 0.2268, loss_box: 0.6306, lr: 0.001000
+speed: 0.222s / iter
+iter: 760 / 70000,total loss: 1.0078, rpn_loss_cls: 0.0806, rpn_loss_box: 0.1396, loss_cls: 0.1403, loss_box: 0.6473, lr: 0.001000
+speed: 0.222s / iter
+iter: 770 / 70000,total loss: 1.0797, rpn_loss_cls: 0.1266, rpn_loss_box: 0.0670, loss_cls: 0.2772, loss_box: 0.6090, lr: 0.001000
+speed: 0.222s / iter
+iter: 780 / 70000,total loss: 1.1609, rpn_loss_cls: 0.0884, rpn_loss_box: 0.1556, loss_cls: 0.2109, loss_box: 0.7060, lr: 0.001000
+speed: 0.222s / iter
+iter: 790 / 70000,total loss: 1.1661, rpn_loss_cls: 0.1452, rpn_loss_box: 0.1173, loss_cls: 0.2457, loss_box: 0.6579, lr: 0.001000
+speed: 0.222s / iter
+iter: 800 / 70000,total loss: 0.9148, rpn_loss_cls: 0.1060, rpn_loss_box: 0.0951, loss_cls: 0.1565, loss_box: 0.5572, lr: 0.001000
+speed: 0.222s / iter
+iter: 810 / 70000,total loss: 1.0858, rpn_loss_cls: 0.0860, rpn_loss_box: 0.1413, loss_cls: 0.2084, loss_box: 0.6501, lr: 0.001000
+speed: 0.222s / iter
+iter: 820 / 70000,total loss: 1.4081, rpn_loss_cls: 0.0621, rpn_loss_box: 0.5478, loss_cls: 0.1218, loss_box: 0.6764, lr: 0.001000
+speed: 0.222s / iter
+iter: 830 / 70000,total loss: 1.0810, rpn_loss_cls: 0.0887, rpn_loss_box: 0.1046, loss_cls: 0.2805, loss_box: 0.6072, lr: 0.001000
+speed: 0.222s / iter
+iter: 840 / 70000,total loss: 1.0291, rpn_loss_cls: 0.1447, rpn_loss_box: 0.0884, loss_cls: 0.1747, loss_box: 0.6213, lr: 0.001000
+speed: 0.222s / iter
+iter: 850 / 70000,total loss: 1.0281, rpn_loss_cls: 0.0835, rpn_loss_box: 0.1549, loss_cls: 0.2166, loss_box: 0.5731, lr: 0.001000
+speed: 0.222s / iter
+iter: 860 / 70000,total loss: 0.8798, rpn_loss_cls: 0.0856, rpn_loss_box: 0.0955, loss_cls: 0.2105, loss_box: 0.4882, lr: 0.001000
+speed: 0.222s / iter
+iter: 870 / 70000,total loss: 0.9930, rpn_loss_cls: 0.0804, rpn_loss_box: 0.2384, loss_cls: 0.1266, loss_box: 0.5476, lr: 0.001000
+speed: 0.222s / iter
+iter: 880 / 70000,total loss: 0.9631, rpn_loss_cls: 0.1340, rpn_loss_box: 0.0639, loss_cls: 0.2010, loss_box: 0.5642, lr: 0.001000
+speed: 0.222s / iter
+iter: 890 / 70000,total loss: 0.9008, rpn_loss_cls: 0.1219, rpn_loss_box: 0.0416, loss_cls: 0.2039, loss_box: 0.5333, lr: 0.001000
+speed: 0.222s / iter
+iter: 900 / 70000,total loss: 1.0271, rpn_loss_cls: 0.1397, rpn_loss_box: 0.0466, loss_cls: 0.1855, loss_box: 0.6554, lr: 0.001000
+speed: 0.222s / iter
+iter: 910 / 70000,total loss: 1.0677, rpn_loss_cls: 0.1948, rpn_loss_box: 0.0607, loss_cls: 0.1940, loss_box: 0.6182, lr: 0.001000
+speed: 0.222s / iter
+iter: 920 / 70000,total loss: 0.9793, rpn_loss_cls: 0.0459, rpn_loss_box: 0.1935, loss_cls: 0.1567, loss_box: 0.5831, lr: 0.001000
+speed: 0.222s / iter
+iter: 930 / 70000,total loss: 0.9745, rpn_loss_cls: 0.1085, rpn_loss_box: 0.0774, loss_cls: 0.1917, loss_box: 0.5968, lr: 0.001000
+speed: 0.222s / iter
+iter: 940 / 70000,total loss: 1.2529, rpn_loss_cls: 0.0128, rpn_loss_box: 0.4618, loss_cls: 0.1007, loss_box: 0.6775, lr: 0.001000
+speed: 0.222s / iter
+iter: 950 / 70000,total loss: 0.8834, rpn_loss_cls: 0.1014, rpn_loss_box: 0.0638, loss_cls: 0.1474, loss_box: 0.5707, lr: 0.001000
+speed: 0.222s / iter
+iter: 960 / 70000,total loss: 0.9469, rpn_loss_cls: 0.0819, rpn_loss_box: 0.0892, loss_cls: 0.1928, loss_box: 0.5830, lr: 0.001000
+speed: 0.222s / iter
+iter: 970 / 70000,total loss: 1.0361, rpn_loss_cls: 0.1349, rpn_loss_box: 0.1479, loss_cls: 0.1672, loss_box: 0.5861, lr: 0.001000
+speed: 0.222s / iter
+iter: 980 / 70000,total loss: 1.2759, rpn_loss_cls: 0.2788, rpn_loss_box: 0.1862, loss_cls: 0.2521, loss_box: 0.5587, lr: 0.001000
+speed: 0.221s / iter
+iter: 990 / 70000,total loss: 0.9805, rpn_loss_cls: 0.0843, rpn_loss_box: 0.1409, loss_cls: 0.2523, loss_box: 0.5031, lr: 0.001000
+speed: 0.221s / iter
+iter: 1000 / 70000,total loss: 0.9296, rpn_loss_cls: 0.0821, rpn_loss_box: 0.1395, loss_cls: 0.1714, loss_box: 0.5367, lr: 0.001000
+speed: 0.221s / iter
+iter: 1010 / 70000,total loss: 1.1016, rpn_loss_cls: 0.1071, rpn_loss_box: 0.0965, loss_cls: 0.2569, loss_box: 0.6410, lr: 0.001000
+speed: 0.221s / iter
+iter: 1020 / 70000,total loss: 0.9944, rpn_loss_cls: 0.0580, rpn_loss_box: 0.2079, loss_cls: 0.1939, loss_box: 0.5345, lr: 0.001000
+speed: 0.221s / iter
+iter: 1030 / 70000,total loss: 0.9427, rpn_loss_cls: 0.0986, rpn_loss_box: 0.0863, loss_cls: 0.1954, loss_box: 0.5623, lr: 0.001000
+speed: 0.221s / iter
+iter: 1040 / 70000,total loss: 0.9808, rpn_loss_cls: 0.0829, rpn_loss_box: 0.1704, loss_cls: 0.1400, loss_box: 0.5874, lr: 0.001000
+speed: 0.221s / iter
+iter: 1050 / 70000,total loss: 0.9875, rpn_loss_cls: 0.0781, rpn_loss_box: 0.0612, loss_cls: 0.2190, loss_box: 0.6293, lr: 0.001000
+speed: 0.221s / iter
+iter: 1060 / 70000,total loss: 1.0814, rpn_loss_cls: 0.1587, rpn_loss_box: 0.0875, loss_cls: 0.2333, loss_box: 0.6019, lr: 0.001000
+speed: 0.221s / iter
+iter: 1070 / 70000,total loss: 1.0119, rpn_loss_cls: 0.0981, rpn_loss_box: 0.1109, loss_cls: 0.2516, loss_box: 0.5513, lr: 0.001000
+speed: 0.221s / iter
+iter: 1080 / 70000,total loss: 0.8786, rpn_loss_cls: 0.1021, rpn_loss_box: 0.0750, loss_cls: 0.1853, loss_box: 0.5162, lr: 0.001000
+speed: 0.221s / iter
+iter: 1090 / 70000,total loss: 0.8184, rpn_loss_cls: 0.0256, rpn_loss_box: 0.1168, loss_cls: 0.1314, loss_box: 0.5446, lr: 0.001000
+speed: 0.221s / iter
+iter: 1100 / 70000,total loss: 0.8528, rpn_loss_cls: 0.0334, rpn_loss_box: 0.1852, loss_cls: 0.1085, loss_box: 0.5258, lr: 0.001000
+speed: 0.221s / iter
+iter: 1110 / 70000,total loss: 1.0448, rpn_loss_cls: 0.0870, rpn_loss_box: 0.1790, loss_cls: 0.2553, loss_box: 0.5235, lr: 0.001000
+speed: 0.221s / iter
+iter: 1120 / 70000,total loss: 1.0551, rpn_loss_cls: 0.0939, rpn_loss_box: 0.1713, loss_cls: 0.2099, loss_box: 0.5800, lr: 0.001000
+speed: 0.221s / iter
+iter: 1130 / 70000,total loss: 0.8235, rpn_loss_cls: 0.0423, rpn_loss_box: 0.0891, loss_cls: 0.1569, loss_box: 0.5352, lr: 0.001000
+speed: 0.221s / iter
+iter: 1140 / 70000,total loss: 0.8515, rpn_loss_cls: 0.0503, rpn_loss_box: 0.0929, loss_cls: 0.2401, loss_box: 0.4681, lr: 0.001000
+speed: 0.221s / iter
+iter: 1150 / 70000,total loss: 0.7230, rpn_loss_cls: 0.0492, rpn_loss_box: 0.0673, loss_cls: 0.1262, loss_box: 0.4803, lr: 0.001000
+speed: 0.221s / iter
+iter: 1160 / 70000,total loss: 1.0225, rpn_loss_cls: 0.0783, rpn_loss_box: 0.1980, loss_cls: 0.2060, loss_box: 0.5402, lr: 0.001000
+speed: 0.221s / iter
+iter: 1170 / 70000,total loss: 0.9475, rpn_loss_cls: 0.1301, rpn_loss_box: 0.0610, loss_cls: 0.2529, loss_box: 0.5035, lr: 0.001000
+speed: 0.221s / iter
+iter: 1180 / 70000,total loss: 0.8581, rpn_loss_cls: 0.0908, rpn_loss_box: 0.1307, loss_cls: 0.1511, loss_box: 0.4854, lr: 0.001000
+speed: 0.221s / iter
+iter: 1190 / 70000,total loss: 1.0652, rpn_loss_cls: 0.0556, rpn_loss_box: 0.1226, loss_cls: 0.2733, loss_box: 0.6137, lr: 0.001000
+speed: 0.221s / iter
+iter: 1200 / 70000,total loss: 1.0324, rpn_loss_cls: 0.0398, rpn_loss_box: 0.3547, loss_cls: 0.0959, loss_box: 0.5419, lr: 0.001000
+speed: 0.221s / iter
+iter: 1210 / 70000,total loss: 0.8747, rpn_loss_cls: 0.0842, rpn_loss_box: 0.0786, loss_cls: 0.2006, loss_box: 0.5114, lr: 0.001000
+speed: 0.221s / iter
+iter: 1220 / 70000,total loss: 1.0549, rpn_loss_cls: 0.1046, rpn_loss_box: 0.2523, loss_cls: 0.1802, loss_box: 0.5178, lr: 0.001000
+speed: 0.221s / iter
+iter: 1230 / 70000,total loss: 0.9273, rpn_loss_cls: 0.1175, rpn_loss_box: 0.1412, loss_cls: 0.1675, loss_box: 0.5010, lr: 0.001000
+speed: 0.221s / iter
+iter: 1240 / 70000,total loss: 0.8340, rpn_loss_cls: 0.0612, rpn_loss_box: 0.1093, loss_cls: 0.2110, loss_box: 0.4525, lr: 0.001000
+speed: 0.221s / iter
+iter: 1250 / 70000,total loss: 1.0585, rpn_loss_cls: 0.1094, rpn_loss_box: 0.1158, loss_cls: 0.2392, loss_box: 0.5940, lr: 0.001000
+speed: 0.221s / iter
+iter: 1260 / 70000,total loss: 0.9666, rpn_loss_cls: 0.0947, rpn_loss_box: 0.0960, loss_cls: 0.1918, loss_box: 0.5842, lr: 0.001000
+speed: 0.221s / iter
+iter: 1270 / 70000,total loss: 0.8155, rpn_loss_cls: 0.0363, rpn_loss_box: 0.0804, loss_cls: 0.2038, loss_box: 0.4950, lr: 0.001000
+speed: 0.221s / iter
+iter: 1280 / 70000,total loss: 0.8841, rpn_loss_cls: 0.1616, rpn_loss_box: 0.0627, loss_cls: 0.2183, loss_box: 0.4416, lr: 0.001000
+speed: 0.221s / iter
+iter: 1290 / 70000,total loss: 1.0790, rpn_loss_cls: 0.1760, rpn_loss_box: 0.1628, loss_cls: 0.1824, loss_box: 0.5578, lr: 0.001000
+speed: 0.221s / iter
+iter: 1300 / 70000,total loss: 0.9900, rpn_loss_cls: 0.0908, rpn_loss_box: 0.0730, loss_cls: 0.2116, loss_box: 0.6146, lr: 0.001000
+speed: 0.221s / iter
+iter: 1310 / 70000,total loss: 0.9364, rpn_loss_cls: 0.0659, rpn_loss_box: 0.0940, loss_cls: 0.2914, loss_box: 0.4850, lr: 0.001000
+speed: 0.221s / iter
+iter: 1320 / 70000,total loss: 0.8808, rpn_loss_cls: 0.0544, rpn_loss_box: 0.0829, loss_cls: 0.2274, loss_box: 0.5162, lr: 0.001000
+speed: 0.221s / iter
+iter: 1330 / 70000,total loss: 0.9443, rpn_loss_cls: 0.0481, rpn_loss_box: 0.1677, loss_cls: 0.1570, loss_box: 0.5715, lr: 0.001000
+speed: 0.221s / iter
+iter: 1340 / 70000,total loss: 1.1175, rpn_loss_cls: 0.1299, rpn_loss_box: 0.1782, loss_cls: 0.2141, loss_box: 0.5953, lr: 0.001000
+speed: 0.221s / iter
+iter: 1350 / 70000,total loss: 0.8496, rpn_loss_cls: 0.0511, rpn_loss_box: 0.1601, loss_cls: 0.1816, loss_box: 0.4569, lr: 0.001000
+speed: 0.221s / iter
+iter: 1360 / 70000,total loss: 0.8465, rpn_loss_cls: 0.0734, rpn_loss_box: 0.1365, loss_cls: 0.1533, loss_box: 0.4833, lr: 0.001000
+speed: 0.221s / iter
+iter: 1370 / 70000,total loss: 0.9141, rpn_loss_cls: 0.0994, rpn_loss_box: 0.2163, loss_cls: 0.1257, loss_box: 0.4728, lr: 0.001000
+speed: 0.221s / iter
+iter: 1380 / 70000,total loss: 0.8503, rpn_loss_cls: 0.0639, rpn_loss_box: 0.1418, loss_cls: 0.1582, loss_box: 0.4863, lr: 0.001000
+speed: 0.221s / iter
+iter: 1390 / 70000,total loss: 0.9856, rpn_loss_cls: 0.0942, rpn_loss_box: 0.1226, loss_cls: 0.2303, loss_box: 0.5386, lr: 0.001000
+speed: 0.221s / iter
+iter: 1400 / 70000,total loss: 0.8668, rpn_loss_cls: 0.0622, rpn_loss_box: 0.1417, loss_cls: 0.1643, loss_box: 0.4985, lr: 0.001000
+speed: 0.221s / iter
+iter: 1410 / 70000,total loss: 0.9228, rpn_loss_cls: 0.0903, rpn_loss_box: 0.0997, loss_cls: 0.2075, loss_box: 0.5253, lr: 0.001000
+speed: 0.221s / iter
+iter: 1420 / 70000,total loss: 1.2299, rpn_loss_cls: 0.0549, rpn_loss_box: 0.3823, loss_cls: 0.1365, loss_box: 0.6562, lr: 0.001000
+speed: 0.221s / iter
+iter: 1430 / 70000,total loss: 0.9109, rpn_loss_cls: 0.0448, rpn_loss_box: 0.0873, loss_cls: 0.1930, loss_box: 0.5858, lr: 0.001000
+speed: 0.221s / iter
+iter: 1440 / 70000,total loss: 0.7748, rpn_loss_cls: 0.0274, rpn_loss_box: 0.0661, loss_cls: 0.1664, loss_box: 0.5150, lr: 0.001000
+speed: 0.221s / iter
+iter: 1450 / 70000,total loss: 0.8500, rpn_loss_cls: 0.0730, rpn_loss_box: 0.0976, loss_cls: 0.2163, loss_box: 0.4631, lr: 0.001000
+speed: 0.220s / iter
+iter: 1460 / 70000,total loss: 0.8537, rpn_loss_cls: 0.0643, rpn_loss_box: 0.0932, loss_cls: 0.2010, loss_box: 0.4952, lr: 0.001000
+speed: 0.220s / iter
+iter: 1470 / 70000,total loss: 0.9506, rpn_loss_cls: 0.1354, rpn_loss_box: 0.1466, loss_cls: 0.1957, loss_box: 0.4729, lr: 0.001000
+speed: 0.220s / iter
+iter: 1480 / 70000,total loss: 0.7943, rpn_loss_cls: 0.0641, rpn_loss_box: 0.1866, loss_cls: 0.1522, loss_box: 0.3913, lr: 0.001000
+speed: 0.220s / iter
+iter: 1490 / 70000,total loss: 0.8314, rpn_loss_cls: 0.0390, rpn_loss_box: 0.0943, loss_cls: 0.1884, loss_box: 0.5097, lr: 0.001000
+speed: 0.220s / iter
+iter: 1500 / 70000,total loss: 0.7638, rpn_loss_cls: 0.0288, rpn_loss_box: 0.1801, loss_cls: 0.1144, loss_box: 0.4404, lr: 0.001000
+speed: 0.220s / iter
+iter: 1510 / 70000,total loss: 1.0943, rpn_loss_cls: 0.1527, rpn_loss_box: 0.0871, loss_cls: 0.2783, loss_box: 0.5762, lr: 0.001000
+speed: 0.220s / iter
+iter: 1520 / 70000,total loss: 0.8778, rpn_loss_cls: 0.0494, rpn_loss_box: 0.1647, loss_cls: 0.1073, loss_box: 0.5564, lr: 0.001000
+speed: 0.220s / iter
+iter: 1530 / 70000,total loss: 1.1794, rpn_loss_cls: 0.0822, rpn_loss_box: 0.2250, loss_cls: 0.2362, loss_box: 0.6360, lr: 0.001000
+speed: 0.220s / iter
+iter: 1540 / 70000,total loss: 1.1588, rpn_loss_cls: 0.0732, rpn_loss_box: 0.3485, loss_cls: 0.2234, loss_box: 0.5137, lr: 0.001000
+speed: 0.220s / iter
+iter: 1550 / 70000,total loss: 0.8666, rpn_loss_cls: 0.0659, rpn_loss_box: 0.1685, loss_cls: 0.1624, loss_box: 0.4698, lr: 0.001000
+speed: 0.220s / iter
+iter: 1560 / 70000,total loss: 0.8228, rpn_loss_cls: 0.0738, rpn_loss_box: 0.0586, loss_cls: 0.1834, loss_box: 0.5070, lr: 0.001000
+speed: 0.220s / iter
+iter: 1570 / 70000,total loss: 1.1528, rpn_loss_cls: 0.0099, rpn_loss_box: 0.3621, loss_cls: 0.2147, loss_box: 0.5661, lr: 0.001000
+speed: 0.220s / iter
+iter: 1580 / 70000,total loss: 0.8638, rpn_loss_cls: 0.0983, rpn_loss_box: 0.0742, loss_cls: 0.1990, loss_box: 0.4923, lr: 0.001000
+speed: 0.220s / iter
+iter: 1590 / 70000,total loss: 0.9411, rpn_loss_cls: 0.0417, rpn_loss_box: 0.1477, loss_cls: 0.1125, loss_box: 0.6391, lr: 0.001000
+speed: 0.220s / iter
+iter: 1600 / 70000,total loss: 0.7034, rpn_loss_cls: 0.0306, rpn_loss_box: 0.1055, loss_cls: 0.1331, loss_box: 0.4342, lr: 0.001000
+speed: 0.220s / iter
+iter: 1610 / 70000,total loss: 0.8285, rpn_loss_cls: 0.0299, rpn_loss_box: 0.1412, loss_cls: 0.1895, loss_box: 0.4679, lr: 0.001000
+speed: 0.220s / iter
+iter: 1620 / 70000,total loss: 0.8213, rpn_loss_cls: 0.0864, rpn_loss_box: 0.1051, loss_cls: 0.0716, loss_box: 0.5582, lr: 0.001000
+speed: 0.220s / iter
+iter: 1630 / 70000,total loss: 0.8911, rpn_loss_cls: 0.0721, rpn_loss_box: 0.1717, loss_cls: 0.0742, loss_box: 0.5732, lr: 0.001000
+speed: 0.220s / iter
+iter: 1640 / 70000,total loss: 0.7929, rpn_loss_cls: 0.0206, rpn_loss_box: 0.2332, loss_cls: 0.1093, loss_box: 0.4298, lr: 0.001000
+speed: 0.220s / iter
+iter: 1650 / 70000,total loss: 1.1424, rpn_loss_cls: 0.0748, rpn_loss_box: 0.4225, loss_cls: 0.1089, loss_box: 0.5363, lr: 0.001000
+speed: 0.220s / iter
+iter: 1660 / 70000,total loss: 0.9155, rpn_loss_cls: 0.1203, rpn_loss_box: 0.1156, loss_cls: 0.1281, loss_box: 0.5515, lr: 0.001000
+speed: 0.220s / iter
+iter: 1670 / 70000,total loss: 0.9268, rpn_loss_cls: 0.0671, rpn_loss_box: 0.1557, loss_cls: 0.1685, loss_box: 0.5355, lr: 0.001000
+speed: 0.220s / iter
+iter: 1680 / 70000,total loss: 0.8622, rpn_loss_cls: 0.0491, rpn_loss_box: 0.0958, loss_cls: 0.1475, loss_box: 0.5698, lr: 0.001000
+speed: 0.220s / iter
+iter: 1690 / 70000,total loss: 0.7694, rpn_loss_cls: 0.0726, rpn_loss_box: 0.0614, loss_cls: 0.1692, loss_box: 0.4662, lr: 0.001000
+speed: 0.220s / iter
+iter: 1700 / 70000,total loss: 0.9078, rpn_loss_cls: 0.0458, rpn_loss_box: 0.1089, loss_cls: 0.1304, loss_box: 0.6227, lr: 0.001000
+speed: 0.220s / iter
+iter: 1710 / 70000,total loss: 1.0228, rpn_loss_cls: 0.0652, rpn_loss_box: 0.2002, loss_cls: 0.2287, loss_box: 0.5287, lr: 0.001000
+speed: 0.220s / iter
+iter: 1720 / 70000,total loss: 1.0356, rpn_loss_cls: 0.0428, rpn_loss_box: 0.1972, loss_cls: 0.1704, loss_box: 0.6252, lr: 0.001000
+speed: 0.220s / iter
+iter: 1730 / 70000,total loss: 0.6860, rpn_loss_cls: 0.0933, rpn_loss_box: 0.0638, loss_cls: 0.1300, loss_box: 0.3989, lr: 0.001000
+speed: 0.220s / iter
+iter: 1740 / 70000,total loss: 0.8215, rpn_loss_cls: 0.0786, rpn_loss_box: 0.0757, loss_cls: 0.1369, loss_box: 0.5303, lr: 0.001000
+speed: 0.220s / iter
+iter: 1750 / 70000,total loss: 0.8991, rpn_loss_cls: 0.0825, rpn_loss_box: 0.0879, loss_cls: 0.2147, loss_box: 0.5140, lr: 0.001000
+speed: 0.220s / iter
+iter: 1760 / 70000,total loss: 0.8242, rpn_loss_cls: 0.0296, rpn_loss_box: 0.0601, loss_cls: 0.1813, loss_box: 0.5531, lr: 0.001000
+speed: 0.220s / iter
+iter: 1770 / 70000,total loss: 0.8311, rpn_loss_cls: 0.1081, rpn_loss_box: 0.0866, loss_cls: 0.1194, loss_box: 0.5170, lr: 0.001000
+speed: 0.220s / iter
+iter: 1780 / 70000,total loss: 0.7475, rpn_loss_cls: 0.0569, rpn_loss_box: 0.0997, loss_cls: 0.1299, loss_box: 0.4610, lr: 0.001000
+speed: 0.220s / iter
+iter: 1790 / 70000,total loss: 1.4665, rpn_loss_cls: 0.0137, rpn_loss_box: 0.8431, loss_cls: 0.1198, loss_box: 0.4899, lr: 0.001000
+speed: 0.220s / iter
+iter: 1800 / 70000,total loss: 0.9184, rpn_loss_cls: 0.0930, rpn_loss_box: 0.0861, loss_cls: 0.2008, loss_box: 0.5385, lr: 0.001000
+speed: 0.220s / iter
+iter: 1810 / 70000,total loss: 1.0188, rpn_loss_cls: 0.0670, rpn_loss_box: 0.0985, loss_cls: 0.3441, loss_box: 0.5091, lr: 0.001000
+speed: 0.220s / iter
+iter: 1820 / 70000,total loss: 0.9159, rpn_loss_cls: 0.0218, rpn_loss_box: 0.1153, loss_cls: 0.2238, loss_box: 0.5549, lr: 0.001000
+speed: 0.220s / iter
+iter: 1830 / 70000,total loss: 0.6533, rpn_loss_cls: 0.0369, rpn_loss_box: 0.0503, loss_cls: 0.1166, loss_box: 0.4495, lr: 0.001000
+speed: 0.220s / iter
+iter: 1840 / 70000,total loss: 0.7866, rpn_loss_cls: 0.0620, rpn_loss_box: 0.1037, loss_cls: 0.0939, loss_box: 0.5270, lr: 0.001000
+speed: 0.220s / iter
+iter: 1850 / 70000,total loss: 0.8921, rpn_loss_cls: 0.0393, rpn_loss_box: 0.2637, loss_cls: 0.1405, loss_box: 0.4486, lr: 0.001000
+speed: 0.220s / iter
+iter: 1860 / 70000,total loss: 0.8894, rpn_loss_cls: 0.0649, rpn_loss_box: 0.0751, loss_cls: 0.2747, loss_box: 0.4747, lr: 0.001000
+speed: 0.220s / iter
+iter: 1870 / 70000,total loss: 0.9086, rpn_loss_cls: 0.0470, rpn_loss_box: 0.1443, loss_cls: 0.1581, loss_box: 0.5591, lr: 0.001000
+speed: 0.220s / iter
+iter: 1880 / 70000,total loss: 0.7756, rpn_loss_cls: 0.0930, rpn_loss_box: 0.0383, loss_cls: 0.1543, loss_box: 0.4901, lr: 0.001000
+speed: 0.220s / iter
+iter: 1890 / 70000,total loss: 0.7457, rpn_loss_cls: 0.0276, rpn_loss_box: 0.0539, loss_cls: 0.2041, loss_box: 0.4601, lr: 0.001000
+speed: 0.220s / iter
+iter: 1900 / 70000,total loss: 0.7634, rpn_loss_cls: 0.0617, rpn_loss_box: 0.0734, loss_cls: 0.1536, loss_box: 0.4746, lr: 0.001000
+speed: 0.220s / iter
+iter: 1910 / 70000,total loss: 0.8761, rpn_loss_cls: 0.0582, rpn_loss_box: 0.1690, loss_cls: 0.1816, loss_box: 0.4673, lr: 0.001000
+speed: 0.220s / iter
+iter: 1920 / 70000,total loss: 0.8988, rpn_loss_cls: 0.0640, rpn_loss_box: 0.1049, loss_cls: 0.1666, loss_box: 0.5633, lr: 0.001000
+speed: 0.220s / iter
+iter: 1930 / 70000,total loss: 0.7139, rpn_loss_cls: 0.0751, rpn_loss_box: 0.0833, loss_cls: 0.1058, loss_box: 0.4498, lr: 0.001000
+speed: 0.220s / iter
+iter: 1940 / 70000,total loss: 1.0441, rpn_loss_cls: 0.0630, rpn_loss_box: 0.0744, loss_cls: 0.3272, loss_box: 0.5795, lr: 0.001000
+speed: 0.220s / iter
+iter: 1950 / 70000,total loss: 0.7942, rpn_loss_cls: 0.0343, rpn_loss_box: 0.0347, loss_cls: 0.2717, loss_box: 0.4535, lr: 0.001000
+speed: 0.220s / iter
+iter: 1960 / 70000,total loss: 1.3425, rpn_loss_cls: 0.0177, rpn_loss_box: 0.7631, loss_cls: 0.0834, loss_box: 0.4784, lr: 0.001000
+speed: 0.220s / iter
+iter: 1970 / 70000,total loss: 0.7808, rpn_loss_cls: 0.0659, rpn_loss_box: 0.1236, loss_cls: 0.1980, loss_box: 0.3933, lr: 0.001000
+speed: 0.220s / iter
+iter: 1980 / 70000,total loss: 0.8978, rpn_loss_cls: 0.1013, rpn_loss_box: 0.1009, loss_cls: 0.1942, loss_box: 0.5015, lr: 0.001000
+speed: 0.220s / iter
+iter: 1990 / 70000,total loss: 0.7358, rpn_loss_cls: 0.0554, rpn_loss_box: 0.1329, loss_cls: 0.1392, loss_box: 0.4083, lr: 0.001000
+speed: 0.220s / iter
+iter: 2000 / 70000,total loss: 0.7004, rpn_loss_cls: 0.0319, rpn_loss_box: 0.0651, loss_cls: 0.1667, loss_box: 0.4368, lr: 0.001000
+speed: 0.220s / iter
+iter: 2010 / 70000,total loss: 0.7712, rpn_loss_cls: 0.0666, rpn_loss_box: 0.1546, loss_cls: 0.1091, loss_box: 0.4409, lr: 0.001000
+speed: 0.220s / iter
+iter: 2020 / 70000,total loss: 0.8912, rpn_loss_cls: 0.0700, rpn_loss_box: 0.1205, loss_cls: 0.1213, loss_box: 0.5793, lr: 0.001000
+speed: 0.220s / iter
+iter: 2030 / 70000,total loss: 0.7725, rpn_loss_cls: 0.0381, rpn_loss_box: 0.2006, loss_cls: 0.0702, loss_box: 0.4635, lr: 0.001000
+speed: 0.220s / iter
+iter: 2040 / 70000,total loss: 0.8186, rpn_loss_cls: 0.0272, rpn_loss_box: 0.1541, loss_cls: 0.1501, loss_box: 0.4872, lr: 0.001000
+speed: 0.220s / iter
+iter: 2050 / 70000,total loss: 0.7660, rpn_loss_cls: 0.0504, rpn_loss_box: 0.1125, loss_cls: 0.1340, loss_box: 0.4691, lr: 0.001000
+speed: 0.220s / iter
+iter: 2060 / 70000,total loss: 0.8424, rpn_loss_cls: 0.0428, rpn_loss_box: 0.1297, loss_cls: 0.1349, loss_box: 0.5350, lr: 0.001000
+speed: 0.220s / iter
+iter: 2070 / 70000,total loss: 0.9089, rpn_loss_cls: 0.1153, rpn_loss_box: 0.1451, loss_cls: 0.1039, loss_box: 0.5447, lr: 0.001000
+speed: 0.220s / iter
+iter: 2080 / 70000,total loss: 0.7442, rpn_loss_cls: 0.0334, rpn_loss_box: 0.0638, loss_cls: 0.1502, loss_box: 0.4968, lr: 0.001000
+speed: 0.220s / iter
+iter: 2090 / 70000,total loss: 0.7210, rpn_loss_cls: 0.1200, rpn_loss_box: 0.0744, loss_cls: 0.1463, loss_box: 0.3802, lr: 0.001000
+speed: 0.220s / iter
+iter: 2100 / 70000,total loss: 0.8260, rpn_loss_cls: 0.0372, rpn_loss_box: 0.2470, loss_cls: 0.0682, loss_box: 0.4736, lr: 0.001000
+speed: 0.220s / iter
+iter: 2110 / 70000,total loss: 1.0290, rpn_loss_cls: 0.1921, rpn_loss_box: 0.1258, loss_cls: 0.1827, loss_box: 0.5283, lr: 0.001000
+speed: 0.220s / iter
+iter: 2120 / 70000,total loss: 0.7811, rpn_loss_cls: 0.0286, rpn_loss_box: 0.0633, loss_cls: 0.1820, loss_box: 0.5072, lr: 0.001000
+speed: 0.220s / iter
+iter: 2130 / 70000,total loss: 0.9650, rpn_loss_cls: 0.0869, rpn_loss_box: 0.0869, loss_cls: 0.1866, loss_box: 0.6047, lr: 0.001000
+speed: 0.220s / iter
+iter: 2140 / 70000,total loss: 0.7579, rpn_loss_cls: 0.0573, rpn_loss_box: 0.0691, loss_cls: 0.1512, loss_box: 0.4803, lr: 0.001000
+speed: 0.220s / iter
+iter: 2150 / 70000,total loss: 0.7127, rpn_loss_cls: 0.0507, rpn_loss_box: 0.0727, loss_cls: 0.1812, loss_box: 0.4083, lr: 0.001000
+speed: 0.220s / iter
+iter: 2160 / 70000,total loss: 0.8593, rpn_loss_cls: 0.0730, rpn_loss_box: 0.0938, loss_cls: 0.1622, loss_box: 0.5303, lr: 0.001000
+speed: 0.220s / iter
+iter: 2170 / 70000,total loss: 0.6717, rpn_loss_cls: 0.0334, rpn_loss_box: 0.0657, loss_cls: 0.1819, loss_box: 0.3907, lr: 0.001000
+speed: 0.219s / iter
+iter: 2180 / 70000,total loss: 0.7002, rpn_loss_cls: 0.0482, rpn_loss_box: 0.0877, loss_cls: 0.1226, loss_box: 0.4417, lr: 0.001000
+speed: 0.219s / iter
+iter: 2190 / 70000,total loss: 0.9240, rpn_loss_cls: 0.0010, rpn_loss_box: 0.3444, loss_cls: 0.0834, loss_box: 0.4952, lr: 0.001000
+speed: 0.219s / iter
+iter: 2200 / 70000,total loss: 0.8007, rpn_loss_cls: 0.0520, rpn_loss_box: 0.0556, loss_cls: 0.1978, loss_box: 0.4953, lr: 0.001000
+speed: 0.219s / iter
+iter: 2210 / 70000,total loss: 0.9815, rpn_loss_cls: 0.0743, rpn_loss_box: 0.2718, loss_cls: 0.1520, loss_box: 0.4834, lr: 0.001000
+speed: 0.219s / iter
+iter: 2220 / 70000,total loss: 0.8401, rpn_loss_cls: 0.0943, rpn_loss_box: 0.0742, loss_cls: 0.2031, loss_box: 0.4685, lr: 0.001000
+speed: 0.219s / iter
+iter: 2230 / 70000,total loss: 1.0026, rpn_loss_cls: 0.0354, rpn_loss_box: 0.2064, loss_cls: 0.2454, loss_box: 0.5154, lr: 0.001000
+speed: 0.219s / iter
+iter: 2240 / 70000,total loss: 0.9334, rpn_loss_cls: 0.0919, rpn_loss_box: 0.0654, loss_cls: 0.2413, loss_box: 0.5348, lr: 0.001000
+speed: 0.219s / iter
+iter: 2250 / 70000,total loss: 0.7814, rpn_loss_cls: 0.0398, rpn_loss_box: 0.1283, loss_cls: 0.1649, loss_box: 0.4484, lr: 0.001000
+speed: 0.219s / iter
+iter: 2260 / 70000,total loss: 0.8666, rpn_loss_cls: 0.0770, rpn_loss_box: 0.1538, loss_cls: 0.1814, loss_box: 0.4544, lr: 0.001000
+speed: 0.219s / iter
+iter: 2270 / 70000,total loss: 0.8879, rpn_loss_cls: 0.0306, rpn_loss_box: 0.2275, loss_cls: 0.1477, loss_box: 0.4821, lr: 0.001000
+speed: 0.219s / iter
+iter: 2280 / 70000,total loss: 0.8940, rpn_loss_cls: 0.1030, rpn_loss_box: 0.0625, loss_cls: 0.2690, loss_box: 0.4595, lr: 0.001000
+speed: 0.219s / iter
+iter: 2290 / 70000,total loss: 0.8055, rpn_loss_cls: 0.0381, rpn_loss_box: 0.1333, loss_cls: 0.1086, loss_box: 0.5256, lr: 0.001000
+speed: 0.219s / iter
+iter: 2300 / 70000,total loss: 0.8007, rpn_loss_cls: 0.0548, rpn_loss_box: 0.1330, loss_cls: 0.1385, loss_box: 0.4744, lr: 0.001000
+speed: 0.219s / iter
+iter: 2310 / 70000,total loss: 0.6428, rpn_loss_cls: 0.0135, rpn_loss_box: 0.0761, loss_cls: 0.1472, loss_box: 0.4061, lr: 0.001000
+speed: 0.219s / iter
+iter: 2320 / 70000,total loss: 0.7580, rpn_loss_cls: 0.0785, rpn_loss_box: 0.0771, loss_cls: 0.1595, loss_box: 0.4429, lr: 0.001000
+speed: 0.219s / iter
+iter: 2330 / 70000,total loss: 0.8816, rpn_loss_cls: 0.0230, rpn_loss_box: 0.1591, loss_cls: 0.1837, loss_box: 0.5159, lr: 0.001000
+speed: 0.219s / iter
+iter: 2340 / 70000,total loss: 0.8932, rpn_loss_cls: 0.0680, rpn_loss_box: 0.0901, loss_cls: 0.2087, loss_box: 0.5264, lr: 0.001000
+speed: 0.219s / iter
+iter: 2350 / 70000,total loss: 0.7407, rpn_loss_cls: 0.0236, rpn_loss_box: 0.0726, loss_cls: 0.1809, loss_box: 0.4635, lr: 0.001000
+speed: 0.219s / iter
+iter: 2360 / 70000,total loss: 0.7859, rpn_loss_cls: 0.0952, rpn_loss_box: 0.0717, loss_cls: 0.2039, loss_box: 0.4151, lr: 0.001000
+speed: 0.219s / iter
+iter: 2370 / 70000,total loss: 0.6774, rpn_loss_cls: 0.0468, rpn_loss_box: 0.0578, loss_cls: 0.1106, loss_box: 0.4622, lr: 0.001000
+speed: 0.219s / iter
+iter: 2380 / 70000,total loss: 0.8054, rpn_loss_cls: 0.0214, rpn_loss_box: 0.1304, loss_cls: 0.1979, loss_box: 0.4556, lr: 0.001000
+speed: 0.219s / iter
+iter: 2390 / 70000,total loss: 0.7536, rpn_loss_cls: 0.0988, rpn_loss_box: 0.0683, loss_cls: 0.1609, loss_box: 0.4255, lr: 0.001000
+speed: 0.219s / iter
+iter: 2400 / 70000,total loss: 0.8349, rpn_loss_cls: 0.0236, rpn_loss_box: 0.0847, loss_cls: 0.2376, loss_box: 0.4890, lr: 0.001000
+speed: 0.219s / iter
+iter: 2410 / 70000,total loss: 0.7473, rpn_loss_cls: 0.0277, rpn_loss_box: 0.0780, loss_cls: 0.1502, loss_box: 0.4913, lr: 0.001000
+speed: 0.219s / iter
+iter: 2420 / 70000,total loss: 0.8277, rpn_loss_cls: 0.1304, rpn_loss_box: 0.1033, loss_cls: 0.1383, loss_box: 0.4557, lr: 0.001000
+speed: 0.219s / iter
+iter: 2430 / 70000,total loss: 0.7303, rpn_loss_cls: 0.0336, rpn_loss_box: 0.1130, loss_cls: 0.1337, loss_box: 0.4500, lr: 0.001000
+speed: 0.219s / iter
+iter: 2440 / 70000,total loss: 0.8575, rpn_loss_cls: 0.0847, rpn_loss_box: 0.0866, loss_cls: 0.1443, loss_box: 0.5419, lr: 0.001000
+speed: 0.219s / iter
+iter: 2450 / 70000,total loss: 0.9070, rpn_loss_cls: 0.0242, rpn_loss_box: 0.2978, loss_cls: 0.0926, loss_box: 0.4924, lr: 0.001000
+speed: 0.219s / iter
+iter: 2460 / 70000,total loss: 0.8454, rpn_loss_cls: 0.0587, rpn_loss_box: 0.1059, loss_cls: 0.1977, loss_box: 0.4832, lr: 0.001000
+speed: 0.219s / iter
+iter: 2470 / 70000,total loss: 0.7713, rpn_loss_cls: 0.0606, rpn_loss_box: 0.0758, loss_cls: 0.1235, loss_box: 0.5113, lr: 0.001000
+speed: 0.219s / iter
+iter: 2480 / 70000,total loss: 0.6569, rpn_loss_cls: 0.0117, rpn_loss_box: 0.0848, loss_cls: 0.0845, loss_box: 0.4759, lr: 0.001000
+speed: 0.219s / iter
+iter: 2490 / 70000,total loss: 0.5682, rpn_loss_cls: 0.0220, rpn_loss_box: 0.0495, loss_cls: 0.1379, loss_box: 0.3588, lr: 0.001000
+speed: 0.219s / iter
+iter: 2500 / 70000,total loss: 0.6543, rpn_loss_cls: 0.0190, rpn_loss_box: 0.1521, loss_cls: 0.0935, loss_box: 0.3897, lr: 0.001000
+speed: 0.219s / iter
+iter: 2510 / 70000,total loss: 1.0123, rpn_loss_cls: 0.1482, rpn_loss_box: 0.1584, loss_cls: 0.1591, loss_box: 0.5466, lr: 0.001000
+speed: 0.219s / iter
+iter: 2520 / 70000,total loss: 0.8533, rpn_loss_cls: 0.0622, rpn_loss_box: 0.1758, loss_cls: 0.1766, loss_box: 0.4387, lr: 0.001000
+speed: 0.219s / iter
+iter: 2530 / 70000,total loss: 0.7678, rpn_loss_cls: 0.0400, rpn_loss_box: 0.0731, loss_cls: 0.1595, loss_box: 0.4952, lr: 0.001000
+speed: 0.219s / iter
+iter: 2540 / 70000,total loss: 0.7114, rpn_loss_cls: 0.0396, rpn_loss_box: 0.0645, loss_cls: 0.1585, loss_box: 0.4487, lr: 0.001000
+speed: 0.219s / iter
+iter: 2550 / 70000,total loss: 0.7553, rpn_loss_cls: 0.1340, rpn_loss_box: 0.0463, loss_cls: 0.1600, loss_box: 0.4150, lr: 0.001000
+speed: 0.219s / iter
+iter: 2560 / 70000,total loss: 0.7102, rpn_loss_cls: 0.0409, rpn_loss_box: 0.1254, loss_cls: 0.1352, loss_box: 0.4086, lr: 0.001000
+speed: 0.219s / iter
+iter: 2570 / 70000,total loss: 0.7758, rpn_loss_cls: 0.0414, rpn_loss_box: 0.0433, loss_cls: 0.1624, loss_box: 0.5287, lr: 0.001000
+speed: 0.219s / iter
+iter: 2580 / 70000,total loss: 0.6888, rpn_loss_cls: 0.0240, rpn_loss_box: 0.1178, loss_cls: 0.1321, loss_box: 0.4149, lr: 0.001000
+speed: 0.219s / iter
+iter: 2590 / 70000,total loss: 0.5965, rpn_loss_cls: 0.0844, rpn_loss_box: 0.0360, loss_cls: 0.0870, loss_box: 0.3892, lr: 0.001000
+speed: 0.219s / iter
+iter: 2600 / 70000,total loss: 0.6033, rpn_loss_cls: 0.0527, rpn_loss_box: 0.0482, loss_cls: 0.0999, loss_box: 0.4024, lr: 0.001000
+speed: 0.219s / iter
+iter: 2610 / 70000,total loss: 0.8770, rpn_loss_cls: 0.0225, rpn_loss_box: 0.1272, loss_cls: 0.1277, loss_box: 0.5996, lr: 0.001000
+speed: 0.219s / iter
+iter: 2620 / 70000,total loss: 0.7895, rpn_loss_cls: 0.0514, rpn_loss_box: 0.2379, loss_cls: 0.0466, loss_box: 0.4535, lr: 0.001000
+speed: 0.219s / iter
+iter: 2630 / 70000,total loss: 0.8564, rpn_loss_cls: 0.0196, rpn_loss_box: 0.1702, loss_cls: 0.1890, loss_box: 0.4776, lr: 0.001000
+speed: 0.219s / iter
+iter: 2640 / 70000,total loss: 0.8277, rpn_loss_cls: 0.0410, rpn_loss_box: 0.0651, loss_cls: 0.1824, loss_box: 0.5392, lr: 0.001000
+speed: 0.219s / iter
+iter: 2650 / 70000,total loss: 0.6976, rpn_loss_cls: 0.0635, rpn_loss_box: 0.0958, loss_cls: 0.1174, loss_box: 0.4209, lr: 0.001000
+speed: 0.219s / iter
+iter: 2660 / 70000,total loss: 0.6047, rpn_loss_cls: 0.0349, rpn_loss_box: 0.1266, loss_cls: 0.0677, loss_box: 0.3754, lr: 0.001000
+speed: 0.219s / iter
+iter: 2670 / 70000,total loss: 0.7277, rpn_loss_cls: 0.0530, rpn_loss_box: 0.0425, loss_cls: 0.2208, loss_box: 0.4114, lr: 0.001000
+speed: 0.219s / iter
+iter: 2680 / 70000,total loss: 0.5837, rpn_loss_cls: 0.0204, rpn_loss_box: 0.0406, loss_cls: 0.1349, loss_box: 0.3878, lr: 0.001000
+speed: 0.219s / iter
+iter: 2690 / 70000,total loss: 0.7954, rpn_loss_cls: 0.0320, rpn_loss_box: 0.0784, loss_cls: 0.2318, loss_box: 0.4531, lr: 0.001000
+speed: 0.219s / iter
+iter: 2700 / 70000,total loss: 0.9946, rpn_loss_cls: 0.0870, rpn_loss_box: 0.1350, loss_cls: 0.1723, loss_box: 0.6003, lr: 0.001000
+speed: 0.219s / iter
+iter: 2710 / 70000,total loss: 0.6927, rpn_loss_cls: 0.0432, rpn_loss_box: 0.1015, loss_cls: 0.0920, loss_box: 0.4560, lr: 0.001000
+speed: 0.219s / iter
+iter: 2720 / 70000,total loss: 0.9052, rpn_loss_cls: 0.0247, rpn_loss_box: 0.2343, loss_cls: 0.1703, loss_box: 0.4760, lr: 0.001000
+speed: 0.219s / iter
+iter: 2730 / 70000,total loss: 0.9385, rpn_loss_cls: 0.0257, rpn_loss_box: 0.2868, loss_cls: 0.1657, loss_box: 0.4603, lr: 0.001000
+speed: 0.219s / iter
+iter: 2740 / 70000,total loss: 0.6850, rpn_loss_cls: 0.0114, rpn_loss_box: 0.0848, loss_cls: 0.0970, loss_box: 0.4918, lr: 0.001000
+speed: 0.219s / iter
+iter: 2750 / 70000,total loss: 0.6761, rpn_loss_cls: 0.0444, rpn_loss_box: 0.0772, loss_cls: 0.1472, loss_box: 0.4072, lr: 0.001000
+speed: 0.219s / iter
+iter: 2760 / 70000,total loss: 0.6920, rpn_loss_cls: 0.0781, rpn_loss_box: 0.0515, loss_cls: 0.1431, loss_box: 0.4193, lr: 0.001000
+speed: 0.219s / iter
+iter: 2770 / 70000,total loss: 0.9664, rpn_loss_cls: 0.0607, rpn_loss_box: 0.2436, loss_cls: 0.1456, loss_box: 0.5165, lr: 0.001000
+speed: 0.219s / iter
+iter: 2780 / 70000,total loss: 0.8303, rpn_loss_cls: 0.0281, rpn_loss_box: 0.1450, loss_cls: 0.1372, loss_box: 0.5201, lr: 0.001000
+speed: 0.219s / iter
+iter: 2790 / 70000,total loss: 0.9124, rpn_loss_cls: 0.0148, rpn_loss_box: 0.1719, loss_cls: 0.1547, loss_box: 0.5710, lr: 0.001000
+speed: 0.219s / iter
+iter: 2800 / 70000,total loss: 0.9459, rpn_loss_cls: 0.0578, rpn_loss_box: 0.3308, loss_cls: 0.1051, loss_box: 0.4522, lr: 0.001000
+speed: 0.219s / iter
+iter: 2810 / 70000,total loss: 0.9550, rpn_loss_cls: 0.0710, rpn_loss_box: 0.2156, loss_cls: 0.1609, loss_box: 0.5075, lr: 0.001000
+speed: 0.219s / iter
+iter: 2820 / 70000,total loss: 0.7538, rpn_loss_cls: 0.0369, rpn_loss_box: 0.0805, loss_cls: 0.1526, loss_box: 0.4838, lr: 0.001000
+speed: 0.219s / iter
+iter: 2830 / 70000,total loss: 0.7923, rpn_loss_cls: 0.0629, rpn_loss_box: 0.0400, loss_cls: 0.1987, loss_box: 0.4907, lr: 0.001000
+speed: 0.219s / iter
+iter: 2840 / 70000,total loss: 0.8415, rpn_loss_cls: 0.0375, rpn_loss_box: 0.2410, loss_cls: 0.1180, loss_box: 0.4449, lr: 0.001000
+speed: 0.219s / iter
+iter: 2850 / 70000,total loss: 0.6241, rpn_loss_cls: 0.0501, rpn_loss_box: 0.0707, loss_cls: 0.0645, loss_box: 0.4388, lr: 0.001000
+speed: 0.219s / iter
+iter: 2860 / 70000,total loss: 0.6176, rpn_loss_cls: 0.0073, rpn_loss_box: 0.0764, loss_cls: 0.1105, loss_box: 0.4234, lr: 0.001000
+speed: 0.219s / iter
+iter: 2870 / 70000,total loss: 0.7118, rpn_loss_cls: 0.0494, rpn_loss_box: 0.1003, loss_cls: 0.1208, loss_box: 0.4412, lr: 0.001000
+speed: 0.219s / iter
+iter: 2880 / 70000,total loss: 0.6393, rpn_loss_cls: 0.0471, rpn_loss_box: 0.0675, loss_cls: 0.1120, loss_box: 0.4128, lr: 0.001000
+speed: 0.219s / iter
+iter: 2890 / 70000,total loss: 0.6781, rpn_loss_cls: 0.0606, rpn_loss_box: 0.0605, loss_cls: 0.1506, loss_box: 0.4064, lr: 0.001000
+speed: 0.219s / iter
+iter: 2900 / 70000,total loss: 0.7924, rpn_loss_cls: 0.0095, rpn_loss_box: 0.0658, loss_cls: 0.2265, loss_box: 0.4906, lr: 0.001000
+speed: 0.219s / iter
+iter: 2910 / 70000,total loss: 0.7138, rpn_loss_cls: 0.0276, rpn_loss_box: 0.0937, loss_cls: 0.1449, loss_box: 0.4477, lr: 0.001000
+speed: 0.219s / iter
+iter: 2920 / 70000,total loss: 0.7737, rpn_loss_cls: 0.0190, rpn_loss_box: 0.1702, loss_cls: 0.1470, loss_box: 0.4375, lr: 0.001000
+speed: 0.219s / iter
+iter: 2930 / 70000,total loss: 0.5489, rpn_loss_cls: 0.0359, rpn_loss_box: 0.0387, loss_cls: 0.1234, loss_box: 0.3510, lr: 0.001000
+speed: 0.219s / iter
+iter: 2940 / 70000,total loss: 0.6538, rpn_loss_cls: 0.0229, rpn_loss_box: 0.0419, loss_cls: 0.1537, loss_box: 0.4353, lr: 0.001000
+speed: 0.219s / iter
+iter: 2950 / 70000,total loss: 0.7176, rpn_loss_cls: 0.0250, rpn_loss_box: 0.0953, loss_cls: 0.1917, loss_box: 0.4055, lr: 0.001000
+speed: 0.219s / iter
+iter: 2960 / 70000,total loss: 0.8037, rpn_loss_cls: 0.0231, rpn_loss_box: 0.2251, loss_cls: 0.1193, loss_box: 0.4361, lr: 0.001000
+speed: 0.219s / iter
+iter: 2970 / 70000,total loss: 0.8913, rpn_loss_cls: 0.0126, rpn_loss_box: 0.3309, loss_cls: 0.1140, loss_box: 0.4337, lr: 0.001000
+speed: 0.219s / iter
+iter: 2980 / 70000,total loss: 0.8352, rpn_loss_cls: 0.0180, rpn_loss_box: 0.1583, loss_cls: 0.1382, loss_box: 0.5207, lr: 0.001000
+speed: 0.219s / iter
+iter: 2990 / 70000,total loss: 0.7939, rpn_loss_cls: 0.0463, rpn_loss_box: 0.1508, loss_cls: 0.1656, loss_box: 0.4311, lr: 0.001000
+speed: 0.219s / iter
+iter: 3000 / 70000,total loss: 0.7614, rpn_loss_cls: 0.0358, rpn_loss_box: 0.1270, loss_cls: 0.1567, loss_box: 0.4418, lr: 0.001000
+speed: 0.219s / iter
+iter: 3010 / 70000,total loss: 0.7129, rpn_loss_cls: 0.0361, rpn_loss_box: 0.1195, loss_cls: 0.1515, loss_box: 0.4058, lr: 0.001000
+speed: 0.219s / iter
+iter: 3020 / 70000,total loss: 0.6632, rpn_loss_cls: 0.0347, rpn_loss_box: 0.1318, loss_cls: 0.1140, loss_box: 0.3826, lr: 0.001000
+speed: 0.219s / iter
+iter: 3030 / 70000,total loss: 0.6924, rpn_loss_cls: 0.0100, rpn_loss_box: 0.2039, loss_cls: 0.0861, loss_box: 0.3924, lr: 0.001000
+speed: 0.219s / iter
+iter: 3040 / 70000,total loss: 0.6970, rpn_loss_cls: 0.0857, rpn_loss_box: 0.0363, loss_cls: 0.1627, loss_box: 0.4123, lr: 0.001000
+speed: 0.219s / iter
+iter: 3050 / 70000,total loss: 0.6064, rpn_loss_cls: 0.0423, rpn_loss_box: 0.0377, loss_cls: 0.1340, loss_box: 0.3924, lr: 0.001000
+speed: 0.219s / iter
+iter: 3060 / 70000,total loss: 0.8921, rpn_loss_cls: 0.1149, rpn_loss_box: 0.1341, loss_cls: 0.1140, loss_box: 0.5291, lr: 0.001000
+speed: 0.219s / iter
+iter: 3070 / 70000,total loss: 0.6226, rpn_loss_cls: 0.0312, rpn_loss_box: 0.0530, loss_cls: 0.1046, loss_box: 0.4337, lr: 0.001000
+speed: 0.219s / iter
+iter: 3080 / 70000,total loss: 0.6286, rpn_loss_cls: 0.0342, rpn_loss_box: 0.0397, loss_cls: 0.1893, loss_box: 0.3654, lr: 0.001000
+speed: 0.219s / iter
+iter: 3090 / 70000,total loss: 1.1941, rpn_loss_cls: 0.0056, rpn_loss_box: 0.7079, loss_cls: 0.0863, loss_box: 0.3943, lr: 0.001000
+speed: 0.219s / iter
+iter: 3100 / 70000,total loss: 0.6866, rpn_loss_cls: 0.0760, rpn_loss_box: 0.0667, loss_cls: 0.1400, loss_box: 0.4040, lr: 0.001000
+speed: 0.219s / iter
+iter: 3110 / 70000,total loss: 0.6564, rpn_loss_cls: 0.0066, rpn_loss_box: 0.1668, loss_cls: 0.0678, loss_box: 0.4151, lr: 0.001000
+speed: 0.219s / iter
+iter: 3120 / 70000,total loss: 0.6869, rpn_loss_cls: 0.0335, rpn_loss_box: 0.0936, loss_cls: 0.1615, loss_box: 0.3982, lr: 0.001000
+speed: 0.219s / iter
+iter: 3130 / 70000,total loss: 0.8932, rpn_loss_cls: 0.0112, rpn_loss_box: 0.3154, loss_cls: 0.1230, loss_box: 0.4437, lr: 0.001000
+speed: 0.219s / iter
+iter: 3140 / 70000,total loss: 0.7364, rpn_loss_cls: 0.0029, rpn_loss_box: 0.1887, loss_cls: 0.0867, loss_box: 0.4581, lr: 0.001000
+speed: 0.219s / iter
+iter: 3150 / 70000,total loss: 0.7155, rpn_loss_cls: 0.0179, rpn_loss_box: 0.1313, loss_cls: 0.1282, loss_box: 0.4380, lr: 0.001000
+speed: 0.219s / iter
+iter: 3160 / 70000,total loss: 0.7256, rpn_loss_cls: 0.0178, rpn_loss_box: 0.2280, loss_cls: 0.1025, loss_box: 0.3773, lr: 0.001000
+speed: 0.219s / iter
+iter: 3170 / 70000,total loss: 0.7520, rpn_loss_cls: 0.0570, rpn_loss_box: 0.1291, loss_cls: 0.1120, loss_box: 0.4539, lr: 0.001000
+speed: 0.219s / iter
+iter: 3180 / 70000,total loss: 0.7334, rpn_loss_cls: 0.0322, rpn_loss_box: 0.0609, loss_cls: 0.2122, loss_box: 0.4281, lr: 0.001000
+speed: 0.219s / iter
+iter: 3190 / 70000,total loss: 0.7265, rpn_loss_cls: 0.0469, rpn_loss_box: 0.0680, loss_cls: 0.1457, loss_box: 0.4659, lr: 0.001000
+speed: 0.219s / iter
+iter: 3200 / 70000,total loss: 0.6074, rpn_loss_cls: 0.0256, rpn_loss_box: 0.0699, loss_cls: 0.0981, loss_box: 0.4139, lr: 0.001000
+speed: 0.219s / iter
+iter: 3210 / 70000,total loss: 0.6779, rpn_loss_cls: 0.0285, rpn_loss_box: 0.1562, loss_cls: 0.0880, loss_box: 0.4052, lr: 0.001000
+speed: 0.219s / iter
+iter: 3220 / 70000,total loss: 0.6755, rpn_loss_cls: 0.0325, rpn_loss_box: 0.0589, loss_cls: 0.1984, loss_box: 0.3857, lr: 0.001000
+speed: 0.219s / iter
+iter: 3230 / 70000,total loss: 0.7213, rpn_loss_cls: 0.0761, rpn_loss_box: 0.0431, loss_cls: 0.1633, loss_box: 0.4389, lr: 0.001000
+speed: 0.219s / iter
+iter: 3240 / 70000,total loss: 0.7905, rpn_loss_cls: 0.0402, rpn_loss_box: 0.1748, loss_cls: 0.1100, loss_box: 0.4656, lr: 0.001000
+speed: 0.219s / iter
+iter: 3250 / 70000,total loss: 0.7183, rpn_loss_cls: 0.0689, rpn_loss_box: 0.1077, loss_cls: 0.1057, loss_box: 0.4361, lr: 0.001000
+speed: 0.219s / iter
+iter: 3260 / 70000,total loss: 0.6224, rpn_loss_cls: 0.0311, rpn_loss_box: 0.0614, loss_cls: 0.1517, loss_box: 0.3783, lr: 0.001000
+speed: 0.219s / iter
+iter: 3270 / 70000,total loss: 0.7050, rpn_loss_cls: 0.0737, rpn_loss_box: 0.0382, loss_cls: 0.1439, loss_box: 0.4492, lr: 0.001000
+speed: 0.219s / iter
+iter: 3280 / 70000,total loss: 0.7575, rpn_loss_cls: 0.0358, rpn_loss_box: 0.0731, loss_cls: 0.2437, loss_box: 0.4048, lr: 0.001000
+speed: 0.219s / iter
+iter: 3290 / 70000,total loss: 0.6959, rpn_loss_cls: 0.0778, rpn_loss_box: 0.1048, loss_cls: 0.0869, loss_box: 0.4263, lr: 0.001000
+speed: 0.219s / iter
+iter: 3300 / 70000,total loss: 0.7049, rpn_loss_cls: 0.0519, rpn_loss_box: 0.0606, loss_cls: 0.1866, loss_box: 0.4058, lr: 0.001000
+speed: 0.219s / iter
+iter: 3310 / 70000,total loss: 0.6400, rpn_loss_cls: 0.0337, rpn_loss_box: 0.0451, loss_cls: 0.1612, loss_box: 0.4000, lr: 0.001000
+speed: 0.218s / iter
+iter: 3320 / 70000,total loss: 0.9019, rpn_loss_cls: 0.0340, rpn_loss_box: 0.1900, loss_cls: 0.1739, loss_box: 0.5041, lr: 0.001000
+speed: 0.218s / iter
+iter: 3330 / 70000,total loss: 0.6330, rpn_loss_cls: 0.0128, rpn_loss_box: 0.0675, loss_cls: 0.1497, loss_box: 0.4030, lr: 0.001000
+speed: 0.218s / iter
+iter: 3340 / 70000,total loss: 0.6370, rpn_loss_cls: 0.0529, rpn_loss_box: 0.0291, loss_cls: 0.1768, loss_box: 0.3782, lr: 0.001000
+speed: 0.218s / iter
+iter: 3350 / 70000,total loss: 0.6828, rpn_loss_cls: 0.0712, rpn_loss_box: 0.0676, loss_cls: 0.1020, loss_box: 0.4420, lr: 0.001000
+speed: 0.218s / iter
+iter: 3360 / 70000,total loss: 1.0016, rpn_loss_cls: 0.0205, rpn_loss_box: 0.1389, loss_cls: 0.1736, loss_box: 0.6686, lr: 0.001000
+speed: 0.218s / iter
+iter: 3370 / 70000,total loss: 0.6813, rpn_loss_cls: 0.0292, rpn_loss_box: 0.1193, loss_cls: 0.1624, loss_box: 0.3705, lr: 0.001000
+speed: 0.218s / iter
+iter: 3380 / 70000,total loss: 0.7332, rpn_loss_cls: 0.0156, rpn_loss_box: 0.1037, loss_cls: 0.2118, loss_box: 0.4021, lr: 0.001000
+speed: 0.218s / iter
+iter: 3390 / 70000,total loss: 0.7214, rpn_loss_cls: 0.0922, rpn_loss_box: 0.0379, loss_cls: 0.2294, loss_box: 0.3618, lr: 0.001000
+speed: 0.218s / iter
+iter: 3400 / 70000,total loss: 0.6203, rpn_loss_cls: 0.0164, rpn_loss_box: 0.0687, loss_cls: 0.1532, loss_box: 0.3821, lr: 0.001000
+speed: 0.218s / iter
+iter: 3410 / 70000,total loss: 0.7400, rpn_loss_cls: 0.0378, rpn_loss_box: 0.1778, loss_cls: 0.0964, loss_box: 0.4280, lr: 0.001000
+speed: 0.218s / iter
+iter: 3420 / 70000,total loss: 0.8605, rpn_loss_cls: 0.0510, rpn_loss_box: 0.2449, loss_cls: 0.0920, loss_box: 0.4725, lr: 0.001000
+speed: 0.218s / iter
+iter: 3430 / 70000,total loss: 0.6049, rpn_loss_cls: 0.0208, rpn_loss_box: 0.1443, loss_cls: 0.1151, loss_box: 0.3247, lr: 0.001000
+speed: 0.218s / iter
+iter: 3440 / 70000,total loss: 0.5899, rpn_loss_cls: 0.0166, rpn_loss_box: 0.1061, loss_cls: 0.1336, loss_box: 0.3336, lr: 0.001000
+speed: 0.218s / iter
+iter: 3450 / 70000,total loss: 0.7252, rpn_loss_cls: 0.0317, rpn_loss_box: 0.0744, loss_cls: 0.1347, loss_box: 0.4845, lr: 0.001000
+speed: 0.218s / iter
+iter: 3460 / 70000,total loss: 0.8297, rpn_loss_cls: 0.0886, rpn_loss_box: 0.1654, loss_cls: 0.1414, loss_box: 0.4343, lr: 0.001000
+speed: 0.218s / iter
+iter: 3470 / 70000,total loss: 0.8606, rpn_loss_cls: 0.1156, rpn_loss_box: 0.1705, loss_cls: 0.1286, loss_box: 0.4459, lr: 0.001000
+speed: 0.218s / iter
+iter: 3480 / 70000,total loss: 0.6641, rpn_loss_cls: 0.0432, rpn_loss_box: 0.0852, loss_cls: 0.1297, loss_box: 0.4060, lr: 0.001000
+speed: 0.218s / iter
+iter: 3490 / 70000,total loss: 0.9011, rpn_loss_cls: 0.0778, rpn_loss_box: 0.2289, loss_cls: 0.1619, loss_box: 0.4326, lr: 0.001000
+speed: 0.218s / iter
+iter: 3500 / 70000,total loss: 0.8061, rpn_loss_cls: 0.0181, rpn_loss_box: 0.2191, loss_cls: 0.1419, loss_box: 0.4271, lr: 0.001000
+speed: 0.218s / iter
+iter: 3510 / 70000,total loss: 0.8358, rpn_loss_cls: 0.0107, rpn_loss_box: 0.0980, loss_cls: 0.2194, loss_box: 0.5077, lr: 0.001000
+speed: 0.218s / iter
+iter: 3520 / 70000,total loss: 0.6772, rpn_loss_cls: 0.0099, rpn_loss_box: 0.0844, loss_cls: 0.1032, loss_box: 0.4797, lr: 0.001000
+speed: 0.218s / iter
+iter: 3530 / 70000,total loss: 0.8309, rpn_loss_cls: 0.0477, rpn_loss_box: 0.0706, loss_cls: 0.1488, loss_box: 0.5637, lr: 0.001000
+speed: 0.218s / iter
+iter: 3540 / 70000,total loss: 0.5799, rpn_loss_cls: 0.0282, rpn_loss_box: 0.0770, loss_cls: 0.0820, loss_box: 0.3927, lr: 0.001000
+speed: 0.218s / iter
+iter: 3550 / 70000,total loss: 0.6765, rpn_loss_cls: 0.0619, rpn_loss_box: 0.0551, loss_cls: 0.1544, loss_box: 0.4052, lr: 0.001000
+speed: 0.218s / iter
