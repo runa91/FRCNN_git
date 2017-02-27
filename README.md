@@ -3,9 +3,7 @@
 
 Faster R-CNN is an object detection algorithm capable to detect objects and regress rectangular axis aligned bounding boxes. We've adapted the original Faster R-CNN source code (see [Faster R-CNN tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF), such that rectangular boxes of any rotation can be predicted. 
 
-![Example Result](https://github.com/runa91/FRCNN_git/blob/master/output/faster_rcnn_end2end_sI/building_train/res_img_nms02_395.png "example result")
-
-<img src="output/faster_rcnn_end2end_sI/building_train/res_img_nms02_395.png" width="200">
+<img src="output/faster_rcnn_end2end_sI/building_train/res_img_nms02_395.png" width="500">
 
 This code is thought as a starting point for work with Faster R-CNN on rotated boxes and we hope you may benefit from this implementation. Nevertheless we can't guarantee its correctness nor provide support.
  
