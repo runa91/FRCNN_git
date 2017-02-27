@@ -15,7 +15,7 @@ This code is thought as a starting point for work with Faster R-CNN on rotated b
 
 * We've implemented a GPU version of the new RoI pooling operation for rotated rectangles, but not CPU. RoI pooling could be optimized in terms of efficiency.
 
-* We ignore RoIs which cross image boundaries (could be handled in a better way)
+* We ignore RoIs which cross image boundaries (could be handled in a better way).
 
 * All objects within one of our training images are rotated around the same angle. We assume that everything works fine even if this is not the case, but did not verify it.
 
