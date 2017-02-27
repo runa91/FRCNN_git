@@ -3,7 +3,7 @@
 
 Faster R-CNN is an object detection algotithm and designed such that objects of various classes are found within an image and simultaneously bounding boxes enclosing these objects can be regressed. Unfortunately, these boxes need to be aligned with the x- and y-axis of the image.
 
-We've adapted the original Faster R-CNN source code (see [Faster R-CNN tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF)), such that rectangular boxes of any rotation can be predicted. 
+We've adapted the original Faster R-CNN source code (see [Faster R-CNN Tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF)), such that rectangular boxes of any rotation can be predicted. 
 
 <img src="output/faster_rcnn_end2end_sI/building_train/res_img_nms02_395.png" width="350"> <img src="output/faster_rcnn_end2end_sI/building_train/res_img_nms021729.png " width="350">
 
@@ -22,7 +22,7 @@ This code is thought as a starting point for work with Faster R-CNN on rotated b
 
 ### Requirements for Software and Hardware
 
-The requirements are the same as for the original Faster R-CNN Tensorflow implementation (see [Faster R-CNN tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF)). 
+The requirements are the same as for the original Faster R-CNN Tensorflow implementation (see [Faster R-CNN Tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF)). 
 
 
 ### Installation 
@@ -94,7 +94,7 @@ Test network:
 
 [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://papers.nips.cc/paper/5638-faster-r-cnn-towards-real-time-object-detection-with-region-proposal-networks.pdf)
 
-[Faster R-CNN tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF)
+[Faster R-CNN Tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF)
 
 
 
