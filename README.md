@@ -7,7 +7,7 @@ We've adapted the original Faster R-CNN source code (see [Faster R-CNN Tensorflo
 
 <img src="output/faster_rcnn_end2end_sI/building_train/res_img_nms02_395.png" width="350"> <img src="output/faster_rcnn_end2end_sI/building_train/res_img_nms021729.png " width="350">
 
-This code is thought as a starting point for work with Faster R-CNN on rotated boxes and we hope you may benefit from this implementation. Nevertheless we can't guarantee its correctness nor provide support.
+This code is thought as a starting point for work with Faster R-CNN on rotated boxes and we hope you may benefit from this implementation. Nevertheless, we can't guarantee its correctness nor provide support.
  
 * The network is developped for and tested on aerial images, where we detect buildings. So this version does currently not support more than one object class.
 
@@ -47,7 +47,7 @@ The requirements are the same as for the original Faster R-CNN Tensorflow implem
 
  
 4. A model trained on buildings can be found at the same location:
-   [Pretrained VGG](https://polybox.ethz.ch/index.php/s/oitt4w7HRWNxDmY)
+   [Trained Network](https://polybox.ethz.ch/index.php/s/oitt4w7HRWNxDmY)
 
    Store it as follows:
    $FRCNN_ROOT/output/faster_rcnn_end2end_sI/building_train/ VGGnet_fast_rcnn_iter_60000.ckpt
@@ -64,7 +64,7 @@ The requirements are the same as for the original Faster R-CNN Tensorflow implem
 
 ### Training
 
-1. Create your own data set and add a new class similar to my 'building' class to the folder $FRCNN_ROOT/lib/datasets/.
+1. Create your own data set and add a new class similar to the existing 'building' class to the folder $FRCNN_ROOT/lib/datasets/.
 You may have a look at $FRCNN_ROOT/changes_wrt_orig_frcnn.odt for more information.
 
 2. Train a model:
@@ -75,7 +75,7 @@ You may have a look at $FRCNN_ROOT/changes_wrt_orig_frcnn.odt for more informati
     ```
 
 ### Network Structure 
-The following two images show the structure of the trainng and test network. Purple denotes network input which consists of ground truth boxes (height, width, x-position and y-position), orientation of these boxes and the image itself. All loss terms which are in the end summed up and jointly minimized are colored orange. Layers in between input and loss are either colored blue or green. Blue indicates, that a layer is not changed with respect to the original version of the code, green highlights changes. 
+The following two images show the structure of the training and test network. Purple denotes network input which consists of ground truth boxes (height, width, x-position and y-position), orientation of these boxes and the image itself. All loss terms which are in the end summed up and jointly minimized are colored orange. Layers in between input and loss are either colored blue or green. Blue indicates, that a layer is not changed with respect to the original version of the code, green highlights changes. 
 
 We use the same loss terms as for original Faster R-CNN, but in addition we introduce two loss terms for the orientation. One for the orientation estimated within the RPN part of the network and one for the estimation within the R-CNN part. For both orientation estimates we implement an L2 loss function. 0.2 is found to be a good weight for each of the rotation loss terms. We predict the
 rotation α of a box as the angle that this box is rotated with respect to an x-, y- axis aligned
