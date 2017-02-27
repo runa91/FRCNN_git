@@ -70,10 +70,10 @@ You may have a look at $FRCNN_ROOT/changes_wrt_orig_frcnn.odt for more informati
 
 ### Network Structure 
 1. Training network
-<img src="various/FRCNN_train.png" width="400">
+<img src="various/FRCNN_train.png" width="500">
 
 2. Test network
-<img src="various/FRCNN_test.png" width="400">
+<img src="various/FRCNN_test.png" width="500">
 
 ### References
 
