@@ -2,14 +2,18 @@
 # FRCNN_git
 
 Faster R-CNN is an object detection algorithm capable to detect objects and regress rectangular axis aligned bounding boxes. We've adapted the original Faster R-CNN source code (see [Faster R-CNN tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF), such that rectangular boxes of any rotation can be predicted. 
+
+![Example Result](https://github.com/runa91/FRCNN_git/blob/master/output/faster_rcnn_end2end_sI/building_train/res_img_nms02_395.png "example result")
+
+This code is thought as a starting point for work with Faster R-CNN on rotated boxes and we hope you may benefit from this implementation. Nevertheless we can't guarantee its correctness nor provide support.
  
 * The network was tested on aerial images, where we detect buildings. So this version does currently not support more than one object class.
 
 * We do not use flipped images, as data is augmented otherwise.
 
-* We've implemented a GPU version of the new roi pooling operation, but not CPU and the roi pooling operation could be optimized in terms of efficiency.
+* We've implemented a GPU version of the new RoI pooling operation for rotated rectangles, but not CPU. RoI pooling could be optimized in terms of efficiency.
 
-* We ignore rois which cross image boundaries (could be handled in a better way)
+* We ignore RoIs which cross image boundaries (could be handled in a better way)
 
 * All objects within one of our training images are rotated around the same angle. We assume that everything works fine even if this is not the case, but did not verify it.
 
