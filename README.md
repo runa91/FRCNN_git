@@ -9,7 +9,7 @@ We've adapted the original Faster R-CNN source code (see [Faster R-CNN tensorflo
 
 This code is thought as a starting point for work with Faster R-CNN on rotated boxes and we hope you may benefit from this implementation. Nevertheless we can't guarantee its correctness nor provide support.
  
-* The network was tested on aerial images, where we detect buildings. So this version does currently not support more than one object class.
+* The network is developped for and tested on aerial images, where we detect buildings. So this version does currently not support more than one object class.
 
 * We do not use flipped images, as data is augmented otherwise.
 
@@ -41,12 +41,14 @@ The requirements are the same as for the original Faster R-CNN Tensorflow implem
 
 3. In case you'd like to train a model, download a pretrained VGG model here:
 [Pretrained VGG](https://polybox.ethz.ch/index.php/s/oitt4w7HRWNxDmY)
+
 store it as follows: 
 $FRCNN_ROOT/data/pretrained_model/VGG_imagenet.npy
 
  
 4. A model trained on buildings can be found at the same location:
 [Pretrained VGG](https://polybox.ethz.ch/index.php/s/oitt4w7HRWNxDmY)
+
 store it as follows:
 $FRCNN_ROOT/output/faster_rcnn_end2end_sI/building_train/ VGGnet_fast_rcnn_iter_60000.ckpt
 
