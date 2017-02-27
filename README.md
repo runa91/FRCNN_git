@@ -77,7 +77,8 @@ The following two images show the structure of the trainng and test network. Pur
 
 We use the same loss terms as for original Faster R-CNN, but in addition we introduce two loss terms for the orientation. One for the orientation estimated within the RPN part of the network and one for the estimation within the R-CNN part. For both orientation estimates we implement an L2 loss function. 0.2 is found to be a good weight for each of the rotation loss terms. We predict the
 rotation α of a box as the angle that this box is rotated with respect to an x-, y- axis aligned
-box (− π/4 ≤ α < π/4 ).
+box: 
+− π/4 ≤ α < π/4
 
 Training network:
 
