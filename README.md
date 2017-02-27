@@ -5,6 +5,8 @@ Faster R-CNN is an object detection algorithm capable to detect objects and regr
 
 ![Example Result](https://github.com/runa91/FRCNN_git/blob/master/output/faster_rcnn_end2end_sI/building_train/res_img_nms02_395.png "example result")
 
+<img src="output/faster_rcnn_end2end_sI/building_train/res_img_nms02_395.png" width="200">
+
 This code is thought as a starting point for work with Faster R-CNN on rotated boxes and we hope you may benefit from this implementation. Nevertheless we can't guarantee its correctness nor provide support.
  
 * The network was tested on aerial images, where we detect buildings. So this version does currently not support more than one object class.
