@@ -40,7 +40,6 @@ $FRCNN_ROOT/output/faster_rcnn_end2end_sI/building_train/ VGGnet_fast_rcnn_iter_
 ### Demo
 
 I've included a few test images, you are now able to run a demonstration:
-
 	```Shell
 	cd $FRCN_ROOT/tools
 	python2.7 building_evaluation_git.py --model "$FRCNN_ROOT/output/faster_rcnn_end2end_sI/building_train/VGGnet_fast_rcnn_iter_60000.ckpt" --data "$FRCNN_ROOT/data/building_data/"
