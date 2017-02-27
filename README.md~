@@ -1,14 +1,22 @@
+
 # FRCNN_git
 
+Faster R-CNN is an object detection algorithm capable to detect objects and regress rectangular axis aligned bounding boxes. We've adapted the original Faster R-CNN source code (see [Faster R-CNN tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF), such that rectangular boxes of any rotation can be predicted. 
+ 
+* The network was tested on aerial images, where we detect buildings. So this version does currently not support more than one object class.
 
+* We do not use flipped images, as data is augmented otherwise.
 
-### 
+* We've implemented a GPU version of the new roi pooling operation, but not CPU and the roi pooling operation could be optimized in terms of efficiency.
 
+* We ignore rois which cross image boundaries (could be handled in a better way)
+
+* All objects within one of our training images are rotated around the same angle. We assume that everything works fine even if this is not the case, but did not verify it.
 
 
 ### Requirements for Software and Hardware
 
-The requirements are the same as for the original tensorflow Faster R-CNN implementation (see [Faster R-CNN tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF)). 
+The requirements are the same as for the original Faster R-CNN Tensorflow implementation (see [Faster R-CNN tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF)). 
 
 
 ### Installation 
@@ -41,16 +49,15 @@ $FRCNN_ROOT/output/faster_rcnn_end2end_sI/building_train/ VGGnet_fast_rcnn_iter_
 
 1. I've included a few test images, you are now able to run a demonstration:
 	
-	```Shell
-	cd $FRCN_ROOT/tools
-	python2.7 building_evaluation_git.py --model "$FRCNN_ROOT/output/faster_rcnn_end2end_sI/building_train/VGGnet_fast_rcnn_iter_60000.ckpt" --data "$FRCNN_ROOT/data/building_data/"
+    ```Shell
+    cd $FRCN_ROOT/tools
+    python2.7 building_evaluation_git.py --model "$FRCNN_ROOT/output/faster_rcnn_end2end_sI/building_train/VGGnet_fast_rcnn_iter_60000.ckpt" --data "$FRCNN_ROOT/data/building_data/"
 	```
 
 ### Training
 
-1. Create your own data set and add a new class similar to my 'building' class to the folder $FRCNN_ROOT/lib/datasets/
-
-You may also have a look at $FRCNN_ROOT/changes_wrt_orig_frcnn.odt for more information.
+1. Create your own data set and add a new class similar to my 'building' class to the folder $FRCNN_ROOT/lib/datasets/.
+You may have a look at $FRCNN_ROOT/changes_wrt_orig_frcnn.odt for more information.
 
 2. Train a model:
 
@@ -61,7 +68,7 @@ You may also have a look at $FRCNN_ROOT/changes_wrt_orig_frcnn.odt for more info
 
 ### References
 
-[Faster R-CNN paper](https://papers.nips.cc/paper/5638-faster-r-cnn-towards-real-time-object-detection-with-region-proposal-networks.pdf)
+[Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://papers.nips.cc/paper/5638-faster-r-cnn-towards-real-time-object-detection-with-region-proposal-networks.pdf)
 
 [Faster R-CNN tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF)
 
