@@ -79,11 +79,11 @@ We use the same loss terms as for original Faster R-CNN, but in addition we intr
 
 Training network:
 
-<img src="various/FRCNN_train.png" height="300">
+<img src="various/FRCNN_train.png" height="200">
 
 Test network:
 
-<img src="various/FRCNN_test.png" height="300">
+<img src="various/FRCNN_test.png" height="180">
 
 ### References
 
