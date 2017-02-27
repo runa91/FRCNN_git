@@ -1,7 +1,7 @@
 
 # FRCNN_git
 
-Faster R-CNN is an object detection algotithm and designed such that objects of various classes are found within an image and simultaneously bounding boxes enclosing these objects can be regressed. Unfortunately, these boxes need to be aligned with the x- and y-axis of the image.
+Faster R-CNN is an object detection algorithm and designed such that objects of various classes are found within an image and simultaneously bounding boxes enclosing these objects can be regressed. Unfortunately, these boxes need to be aligned with the x- and y-axis of the image.
 
 We've adapted the original Faster R-CNN source code (see [Faster R-CNN Tensorflow](https://github.com/smallcorgi/Faster-RCNN_TF)), such that rectangular boxes of any rotation can be predicted. 
 
