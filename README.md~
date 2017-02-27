@@ -9,7 +9,7 @@ We've adapted the original Faster R-CNN source code (see [Faster R-CNN tensorflo
 
 This code is thought as a starting point for work with Faster R-CNN on rotated boxes and we hope you may benefit from this implementation. Nevertheless we can't guarantee its correctness nor provide support.
  
-* The network was tested on aerial images, where we detect buildings. So this version does currently not support more than one object class.
+* The network is developped for and tested on aerial images, where we detect buildings. So this version does currently not support more than one object class.
 
 * We do not use flipped images, as data is augmented otherwise.
 
